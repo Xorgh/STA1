@@ -91,7 +91,44 @@ df = pd.DataFrame({
 df.head()
 ```
 
+Vi kan også oprette en DataFrame med både rækkenavne (`index`) og kolonnenavne (`columns`):
+
+```python
+df_pendling = pd.DataFrame(
+    [
+        [310, 70, 20],
+        [45, 120, 35],
+        [10, 95, 15],
+        [180, 25, 55]
+    ],
+    index=["Salg", "Udvikling", "Support", "Logistik"],
+    columns=["Bil", "Offentlig", "Cykel"]
+)
+
+df_pendling
+```
+
 Dette er præcis den datastruktur, vi vil arbejde med i resten af kurset – uanset om data kommer fra CSV-filer eller databaser.
+
+### Import af data fra CSV og Excel
+
+Når data allerede ligger i filer, kan vi læse dem direkte ind i Pandas:
+
+Hvis du får en fejl om manglende `openpyxl`, kan du installere pakken sådan her:
+
+```python
+%pip install openpyxl
+```
+
+```python
+# CSV-fil
+df_csv = pd.read_csv("data.csv")
+
+# Excel-fil
+df_excel = pd.read_excel("alldata.xlsx")
+
+df_csv.head(), df_excel.head()
+```
 
 ---
 
