@@ -131,28 +131,28 @@ Based on the above information, create a contingency table using a Pandas DataFr
 ??? answer "&nbsp;"
     Den bør være magen til den, der er i Tutorial - Session 1, afsnit 4.
 ​
-#### Øvelse 5 ([Monty Hall](https://en.wikipedia.org/wiki/Monty_Hall_problem) - klassisk sandsynlighedsproblem)
+#### Exercise 5 ([Monty Hall](https://en.wikipedia.org/wiki/Monty_Hall_problem) - classic probability problem)
 
-I et gameshow står der tre lukkede døre. Bag én dør er en bil (gevinst), og bag de to andre er der geder.
+In a game show, there are three closed doors. Behind one door is a car (the prize), and behind the other two are goats.
 
-i. Du vælger først én dør.
+i. You first choose one door.
 
-ii. Værten, som ved hvor bilen er, åbner derefter altid en af de to andre døre med en ged bag.
+ii. The host, who knows where the car is, always opens one of the two other doors that has a goat behind it.
 
-iii. Du får nu valget mellem at **holde fast** i din oprindelige dør eller **skifte** til den anden lukkede dør.
+iii. You are then given the choice to **stay** with your original door or **switch** to the other unopened door.
 
-Besvar følgende:
+Answer the following:
 
-1. Hvad er sandsynligheden for at vinde bilen, hvis du **holder fast**?
-2. Hvad er sandsynligheden for at vinde bilen, hvis du **skifter**?
-3. Hvilken strategi er bedst, og hvorfor?
-4. Verificer svaret med en simulation i Python med 10, 100 og 10.000 gentagelser. Brug koden nedenfor, men tilpas den gerne.
+1. What is the probability of winning the car if you **stay**?
+2. What is the probability of winning the car if you **switch**?
+3. Which strategy is best, and why?
+4. Verify your result with a Python simulation using 10, 100, 10,000, and 100,000 trials - run the simulation for each n-trials value multiple times and see what happens when n-trials is increased. Use the code below, but feel free to adapt it.
 
 ```python
 import random
 
 # Number of simulations
-n_trials = # Fyld ud med et tal
+n_trials = # Fill in a number
 
 wins_stay = 0
 wins_switch = 0
@@ -192,5 +192,5 @@ print(f"Win rate (switch): {wins_switch / n_trials:.4f}")
 
 
 ??? answer "&nbsp;"
-    Hold fast: 1/3. Skift: 2/3. Det er derfor bedst at skifte.
+    Stay: 1/3. Switch: 2/3. Therefore, switching is the better strategy.
 
