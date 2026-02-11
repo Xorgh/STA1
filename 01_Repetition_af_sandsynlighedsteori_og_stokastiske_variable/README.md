@@ -27,9 +27,9 @@ Ross: Kapitel 1-3. Bemærk, kapitel 2-3 er repetition af tidligere stof, mens ka
 
 [Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/01_Repetition_af_sandsynlighedsteori_og_stokastiske_variable/Tutorial_1_notebook.ipynb)
 
-[Sessionnoter]()
+[Sessionnoter](https://drive.google.com/file/d/1D20cFjJA9CmBZQGu_rESr4u4jqoc_x7a/view?usp=sharing)
 
-[Sessionsmateriale]()
+[Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgD9ITWOtgoOSJJQFfZOslRtAen5QiivW73BLyPj_it1PUo?e=JHXkHj)
 
 ---
 
@@ -131,7 +131,7 @@ Based on the above information, create a contingency table using a Pandas DataFr
 ??? answer "&nbsp;"
     Den bør være magen til den, der er i Tutorial - Session 1, afsnit 4.
 ​
-#### Exercise 5 ([Monty Hall](https://en.wikipedia.org/wiki/Monty_Hall_problem) - classic probability problem)
+#### Øvelse 5 ([Monty Hall](https://en.wikipedia.org/wiki/Monty_Hall_problem) - classic probability problem)
 
 In a game show, there are three closed doors. Behind one door is a car (the prize), and behind the other two are goats.
 
@@ -193,4 +193,31 @@ print(f"Win rate (switch): {wins_switch / n_trials:.4f}")
 
 ??? answer "&nbsp;"
     Stay: 1/3. Switch: 2/3. Therefore, switching is the better strategy.
+
+#### Øvelse 6 (Scales of Measurement)
+
+For each of the following descriptions, identify whether the data is measured on a **nominal**, **ordinal**, **interval**, or **ratio** scale.
+
+1. The jersey numbers of players on a football team (e.g. 7, 10, 23).
+2. IQ scores from a group of test subjects (e.g. 95, 110, 130).
+3. Customer satisfaction rated as *Very Dissatisfied*, *Dissatisfied*, *Neutral*, *Satisfied*, *Very Satisfied*.
+4. The distance in kilometres from each student's home to campus.
+5. The postal codes (zip codes) of customers in a database (e.g. 8000, 2100, 5000).
+6. The finishing positions in a marathon (1st, 2nd, 3rd, ...).
+7. Annual income of employees in a company measured in DKK.
+8. The year in which major historical events occurred (e.g. 1066, 1776, 1945).
+9. The bus route numbers in a city's transit system (e.g. 1, 3, 42, 150).
+10. The elapsed time (in seconds) for a sprinter to complete a 100-metre dash.
+
+??? answer "&nbsp;"
+    1. Nominal — jersey numbers are labels; arithmetic on them is meaningless.
+    2. Interval — differences are meaningful (a 10-point gap means the same anywhere on the scale), but an IQ of 0 does not mean "no intelligence", and ratios are not meaningful.
+    3. Ordinal — the categories have a clear order, but the gaps between levels are not necessarily equal.
+    4. Ratio — distance has a true zero and meaningful ratios (10 km is twice 5 km).
+    5. Nominal — postal codes are numeric labels for geographic areas; arithmetic on them is meaningless (8000 + 2100 does not produce a meaningful result).
+    6. Ordinal — positions indicate order, but the time difference between 1st and 2nd may differ from that between 2nd and 3rd.
+    7. Ratio — income has a true zero and meaningful ratios.
+    8. Interval — differences between years are meaningful, but year 0 is not a true absence of time.
+    9. Nominal — route numbers are identifiers, not quantities; "route 42" is not more or less than "route 3C".
+    10. Ratio — elapsed time has a true zero and meaningful ratios (10 s is twice 5 s).
 
