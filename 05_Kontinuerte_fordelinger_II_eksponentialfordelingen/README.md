@@ -1,12 +1,18 @@
 ---
 tags:
-    - Emner (indsættes)
+    - Normalfordeling
+    - Eksponentialfordeling
+    - Hukommelsesløshed
+    - Rate-parameter
+    - Levetidsanalyse
+    - Poisson-process
+    - Lineære transformationer
 ---
-<h1 align="center">Kontinuerte fordelinger II: eksponentialfordelingen</h1>
+<h1 align="center">Kontinuerte fordelinger II: eksponentialfordelingen og normalfordeling fortsat</h1>
 
 ## Sessionsmateriale:
 
-Pensum og materialer indsættes her.
+Ross: 5.5. (fortsat), 5.6.
 
 [Recap og øvelser]()
 
@@ -18,19 +24,26 @@ Pensum og materialer indsættes her.
 
 ## Sessionbeskrivelse
 
-Kort akademisk beskrivelse indsættes her.
+Denne session har to formål. For det første samler vi op på **normalfordelingen** fra sidst. Det er et omfattende emne, og vi bruger tid på at sikre, at forståelsen af standardisering og brug af fordelingen sidder fast. Vi ser evt. på lineære transformationer af normalfordelte variable (f.eks. $Y = aX + b$), som er en vigtig egenskab i dataanalyse.
+
+Herefter introducerer vi **eksponentialfordelingen**. Hvor normalfordelingen ofte beskriver *målinger*, beskriver eksponentialfordelingen typisk *levetider* eller *ventetider* mellem hændelser (f.eks. tiden mellem to servernedbrud). Den har en unik og kontraintuitiv egenskab kaldet **hukommelsesløshed** (memorylessness), som vi skal forstå betydningen af. Vi vil også kort berøre sammenhængen til Poisson-fordelingen: Hvis ankomster (f.eks. bugs) er Poisson-fordelte, er tiden mellem dem eksponentialfordelt.
 
 ### Centrale begreber
 
-- Begreb 1 (indsættes)
-- Begreb 2 (indsættes)
-- Begreb 3 (indsættes)
+- **Normalfordeling (fortsat):** Anvendelse og egenskaber
+- **Eksponentialfordeling:** Tæthedsfunktion $f(x) = \lambda e^{-\lambda x}$
+- **Rate-parameteren ($\lambda$):** Sammenhæng med middelværdi ($1/\lambda$)
+- **Hukommelsesløshed:** $P(X > s+t | X > s) = P(X > t)$
+- **Relationen mellem Poisson og Eksponential:** Antal vs. tid
 
 !!! tip "Læringsmål"
 
-    - Læringsmål indsættes.
-    - Læringsmål indsættes.
-    - Læringsmål indsættes.
+    - Opnå rutine i beregninger med normalfordelingen.
+    - Kunne genkende situationer, hvor eksponentialfordelingen er en passende model (ventetider/levetider).
+    - Forstå og forklare begrebet hukommelsesløshed, og hvorfor det er centralt for eksponentialfordelingen.
+    - Kunne veksle mellem at beskrive en proces via hændelsesrate (Poisson) og ventetid (Eksponential).
+    - Kunne beregne sandsynligheder for, at en proces "overlever" længere end et givet tidsrum.
+
 
 ## Øvelser
 
