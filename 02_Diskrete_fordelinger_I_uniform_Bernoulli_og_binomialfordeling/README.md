@@ -29,7 +29,7 @@ Ross: 4.1., 4.2., 4.4., 4.6., 5.1, 5.4
 
 [Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Tutorial_2_notebook.ipynb)
 
-[Sessionnoter]()
+[Sessionnoter](https://drive.google.com/file/d/1azFhbhkKSIiLboKuxTlyhh-41jYMtbRm/view?usp=sharing)
 
 ---
 
