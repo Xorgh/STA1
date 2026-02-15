@@ -18,11 +18,18 @@ tags:
 
 Ross: 4.1., 4.2., 4.4., 4.6., 5.1, 5.4
 
-[Recap og øvelser]()
+<p align="left">
+
+  <a href="Tutorial_2_notebook/">
+    <img src="../figures/Python-logo-notext.svg.png" alt="Python introduktion" width="100" />
+    <br>
+    <strong>Se Tutorial 2: Diskrete fordelinger: Uniform, Bernoulli og Binomial</strong>
+  </a>
+</p>
+
+[Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Tutorial_2_notebook.ipynb)
 
 [Sessionnoter]()
-
-[Sessionsmateriale]()
 
 ---
 
@@ -37,8 +44,7 @@ Vi arbejder videre med **forventningsværdi** og **varians**, men definerer dem 
 - **Stokastiske variable:** Diskrete vs. kontinuerte
 - **Funktioner:** Tætheds- (PDF), sandsynligheds- (PMF) og fordelingsfunktioner (CDF)
 - **Nøgletal:** Forventningsværdi ($E[X]$) og varians ($Var(X)$)
-- **Diskrete fordelinger:** Bernoulli- og binomialfordeling
-- **Kontinuert fordeling:** Ligefordeling (Uniform)
+- **Diskrete fordelinger:** Uniform,Bernoulli- og binomialfordeling
 
 !!! tip "Læringsmål"
 
@@ -57,7 +63,18 @@ Indsæt bogreferencer og opgavelister her.
     ol { list-style-type: lower-alpha; }
 </style>
 
-Disse øvelser skal I kunne lave uden Python. I må gerne bruge Wolfram Alpha (se eventuelt tutorial til denne session).
+Disse øvelser skal I kunne lave med og uden Python. I må gerne bruge Wolfram Alpha (se eventuelt tutorial til denne session).
+
+<p align="left">
+
+  <a href="Exercises_solutions/">
+    <img src="../figures/Python-logo-notext.svg.png" alt="Python løsninger" width="100" />
+    <br>
+    <strong>Se løsninger til øvelserne (Python + WolframAlpha)</strong>
+  </a>
+</p>
+
+[Download løsningsnotebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Exercises_solutions.ipynb)
 
 #### Øvelse 1
 A computer system uses passwords that are exactly six
