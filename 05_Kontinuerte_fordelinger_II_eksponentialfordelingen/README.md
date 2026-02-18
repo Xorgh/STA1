@@ -20,6 +20,14 @@ Ross: 5.5. (fortsat), 5.6.
 
 [Sessionsmateriale]()
 
+## Video Materiale:
+
+**Exponential Distribution**
+
+En enkelt video, der dækker eksponentialfordelingen.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C7V3d2yB58U?si=twLlJkku_rxrojdH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## Sessionbeskrivelse

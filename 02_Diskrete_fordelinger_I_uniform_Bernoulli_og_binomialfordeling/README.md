@@ -29,8 +29,17 @@ Ross: 4.1., 4.2., 4.4., 4.6., 5.1, 5.4
 
 [Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Tutorial_2_notebook.ipynb)
 
+[Se tutorial som markdown](Tutorial_2.md/)
+
 [Sessionnoter](https://drive.google.com/file/d/1azFhbhkKSIiLboKuxTlyhh-41jYMtbRm/view?usp=sharing)
 
+## Video Materiale:
+
+**Discrete Probability Distributions**
+
+Playliste med 13 videoer, der dækker diskrete fordelinger (også til session 3).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=mOawtMbtwnrqVGX2&amp;list=PLvxOuBpazmsNIHP5cz37oOPZx0JKyNszN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ---
 
 ## Sessionbeskrivelse
@@ -89,9 +98,9 @@ password is called a hit.
 3. What are the mean and variance of the number of hits?
 
 ??? answer "&nbsp;"
-    1. The distribution of the number of hits is Binomial with $n = 10^5$ and \(p=\frac{10^5}{36^6}\)
-    2. \(P(X=0) = 0.6317\)
-    3. \(\mu = \sigma^2 = 0.4594\)
+    1. The distribution of the number of hits is Binomial with $n = 10^5$ and $p=\frac{10^5}{36^6}$
+    2. $P(X=0) = 0.6317$
+    3. $\mu = \sigma^2 = 0.4594$
 
 #### Øvelse 2
 Because all airline passengers do not show up for
@@ -103,8 +112,8 @@ show up is 0.10, and the passengers behave independently.
 2. What is the probability that the flight departs with empty seats?
 
 ??? answer "&nbsp;"
-    1. \(p = 0.9961 \)
-    2. \(p = 0.9886\)
+    1. $p = 0.9961 $
+    2. $p = 0.9886$
 
 #### Øvelse 3
 A congested computer network has a 1% chance of losing a data packet that must be resent, and packet losses are independent events. An e-mail message requires 100 packets.
@@ -115,10 +124,10 @@ A congested computer network has a 1% chance of losing a data packet that must b
 4. If there are 10 messages and each contains 100 packets, what is the probability that at least one message requires that two or more packets be resent?
 
 ??? answer "&nbsp;"
-    1. \(P(X \geq 1)=0.634\)
-    2. \(P(X \geq 2)=0.2642\)
-    3. \(\mu = 1, \sigma = 0.995\)
-    4. \(P(Y \geq 1)=0.9535\)
+    1. $P(X \geq 1)=0.634$
+    2. $P(X \geq 2)=0.2642$
+    3. $\mu = 1, \sigma = 0.995$
+    4. $P(Y \geq 1)=0.9535$
 
 #### Øvelse 4
 The probability that a patient recovers from a rare blood disease is 0.4. If 15 people are known to have contracted this disease, what is the probability that:
@@ -129,10 +138,10 @@ The probability that a patient recovers from a rare blood disease is 0.4. If 15 
 4. Find the mean and variance.
 
 ??? answer "&nbsp;"
-    1. \(P(X \geq 10) \approx 0.0338\)
-    2. \(P(3 \leq X \leq 8) \approx 0.8778\)
-    3. \(P(X=5) \approx 0.1859\)
-    4. \(\mu = 6, \sigma^2 = 3.6\)
+    1. $P(X \geq 10) \approx 0.0338$
+    2. $P(3 \leq X \leq 8) \approx 0.8778$
+    3. $P(X=5) \approx 0.1859$
+    4. $\mu = 6, \sigma^2 = 3.6$
 
 #### Øvelse 5
 Let $X$ and $Y$ be two independent discrete random variables with the following PMFs:

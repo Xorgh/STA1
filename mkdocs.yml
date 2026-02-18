@@ -146,7 +146,9 @@ nav:
     - "02 Diskrete fordelinger I: uniform, Bernoulli og binomialfordeling":
       - 02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/README.md
       - "Tutorial 2 (notebook)": 02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Tutorial_2_notebook.ipynb
-    - "03 Diskrete fordelinger II: hypergeometrisk, geometrisk, negativ binomial- og Poissonfordeling": 03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/README.md
+    - "03 Diskrete fordelinger II: hypergeometrisk, geometrisk, negativ binomial- og Poissonfordeling":
+      - 03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/README.md
+      - "Tutorial 3 (notebook)": 03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/Tutorial_3_notebook.ipynb
     - "04 Kontinuerte fordelinger I: normalfordelingen": 04_Kontinuerte_fordelinger_I_normalfordelingen/README.md
     - "05 Kontinuerte fordelinger II: eksponentialfordelingen": 05_Kontinuerte_fordelinger_II_eksponentialfordelingen/README.md
     - "06 Fordelinger af stikprøvestørrelser (sampling distributions)": 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/README.md

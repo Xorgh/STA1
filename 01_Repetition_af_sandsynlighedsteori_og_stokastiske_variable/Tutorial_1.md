@@ -13,7 +13,6 @@ Vi vil især fokusere på:
 
 **Notebook-version:**
 
-- [Åbn notebook som side](Tutorial_1_notebook/)
 - [Download notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/01_Repetition_af_sandsynlighedsteori_og_stokastiske_variable/Tutorial_1_notebook.ipynb)
 
 ---
@@ -47,7 +46,7 @@ terningekast = np.random.randint(1, 7, size=1000)
 terningekast[:10]
 ```
 
-Her genererer vi en række tilfældige terningekast og gemmer resultaterne i variablen `terningekast`. Hver værdi svarer til ét udfald af den stokastiske variabel \( X \), som angiver antallet af øjne ved et kast med en fair seks-sidet terning.
+Her genererer vi en række tilfældige terningekast og gemmer resultaterne i variablen `terningekast`. Hver værdi svarer til ét udfald af den stokastiske variabel $X$, som angiver antallet af øjne ved et kast med en fair seks-sidet terning.
 
 - `np.random.seed(42)` sørger for, at vi får de samme tilfældige tal hver gang vi kører koden. Tallet 42 er blot et vilkårligt valgt "seed" – du kan bruge et hvilket som helst andet tal, men med samme seed får du replikerbare resultater.
 - `np.random.randint(1, 7, size=1000)` laver 1000 tilfældige heltal mellem 1 og 6 (inklusiv 1, eksklusiv 7 – derfor står der 7). Det svarer altså til at kaste en terning 1000 gange.
@@ -65,17 +64,30 @@ Ifølge teorien er forventningsværdien middelværdien af en stokastisk variabel
 Vi beregner disse direkte fra vores simulerede data.
 
 ```python
-middelværdi = np.mean(terningekast)
-varians = np.var(terningekast)
-std_afvigelse = np.std(terningekast)
+# Beregning af populationsparametre (antager alle kast udgør hele populationen)
+middelværdi_population = np.mean(terningekast)
+varians_population = np.var(terningekast)
+std_afvigelse_population = np.std(terningekast)
 
-middelværdi, varians, std_afvigelse
+# Beregning af stikprøveparametre (antager kastene er en stikprøve)
+middelværdi_stikprøve = np.mean(terningekast)
+varians_stikprøve = np.var(terningekast, ddof=1)
+std_afvigelse_stikprøve = np.std(terningekast, ddof=1)
+
+print("Population: middelværdi =", middelværdi_population, 
+      ", varians =", varians_population, 
+      ", std_afvigelse =", std_afvigelse_population)
+print("Stikprøve: varians =", varians_stikprøve, 
+      ", std_afvigelse =", std_afvigelse_stikprøve)
 ```
 
 Sammenlign disse værdier med de teoretiske resultater for et fair terningekast:
 
-* Forventningsværdi: 3.5
-* Varians: \( \frac{35}{12} \approx 2.92 \)
+- Forventningsværdi: 3.5
+- Varians: $\frac{35}{12} \approx 2.92$
+
+
+Læg også mærke til forskellen mellem populationsvarians og stikprøvevarians. I eksemplet her er forskellen mellem de to mål meget lille, fordi vi har en stor stikprøve (1000 kast). Jo større stikprøven er, jo tættere ligger stikprøvevariansen typisk på populationsvariansen.
 
 ---
 
@@ -91,9 +103,8 @@ df = pd.DataFrame({
 df.head()
 ```
 
-Vi kan også oprette en DataFrame med både rækkenavne (`index`) og kolonnenavne (`columns`):
-
 ```python
+# Eksempel med navngivne rækker (index) og kolonner
 df_pendling = pd.DataFrame(
     [
         [310, 70, 20],
@@ -108,16 +119,20 @@ df_pendling = pd.DataFrame(
 df_pendling
 ```
 
-Dette er præcis den datastruktur, vi vil arbejde med i resten af kurset – uanset om data kommer fra CSV-filer eller databaser.
+Dette er ofte den datastruktur, vi vil arbejde med i resten af kurset – uanset om data kommer fra CSV-filer, databaser eller er organiseret på andre måder.
 
 ### Import af data fra CSV og Excel
 
-Når data allerede ligger i filer, kan vi læse dem direkte ind i Pandas:
+Hvis du ser fejlen `FileNotFoundError`, betyder det normalt, at filerne ikke ligger i den mappe, som notebooken kører fra.
 
-Hvis du får en fejl om manglende `openpyxl`, kan du installere pakken sådan her:
+Til CSV behøver du normalt ingen ekstra pakker. Til Excel (`.xlsx`) bruger Pandas typisk `openpyxl` som engine.
+
+Kør derfor evt. installations-cellen nedenfor først, og tjek derefter at `data.csv` og `alldata.xlsx` findes i din aktuelle working directory.
 
 ```python
-%pip install openpyxl
+# Kun nødvendigt hvis du mangler Excel-engine til .xlsx
+# Kør cellen, hvis read_excel giver en fejl om manglende openpyxl
+# %pip install openpyxl
 ```
 
 ```python
@@ -143,12 +158,12 @@ Vi har allerede set på gennemsnit, varians og standardafvigelse i afsnit 3. Her
 ```python
 median = df["kast"].median()
 mode = df["kast"].mode()
-
-median, mode
+print(f"Medianen er: {median}")
+print(f"Typetal (mode) er: {', '.join(map(str, mode.values))}")
 ```
 
-* **Medianen** er 50%-percentilen og er robust over for outliers
-* **Typetal** er den værdi, der forekommer oftest
+- **Medianen** er 50%-percentilen og er robust over for outliers
+- **Typetal** er den værdi, der forekommer oftest
 
 ### Percentiler og kvartiler
 
@@ -166,6 +181,8 @@ percentiler
 
 - I Pandas bruges `quantile` og forventer tal mellem 0 og 1.
 - I NumPy bruges `percentile` og forventer tal mellem 0 og 100.
+
+De viser det samme, bare i forskellig skala.
 
 ```python
 pandas_p90 = df["kast"].quantile(0.90)
@@ -237,10 +254,10 @@ I de kommende sessioner vil vi arbejde mere systematisk med normalfordelingen og
 
 I denne tutorial har du:
 
-* arbejdet med stokastiske variable via simulation
-* beregnet forventningsværdi, varians og standardafvigelse
-* anvendt deskriptiv statistik på data
-* set sammenhængen mellem teori og empiriske observationer
-* fået et første indblik i normalfordelingen
+- arbejdet med stokastiske variable via simulation
+- beregnet forventningsværdi, varians og standardafvigelse
+- anvendt deskriptiv statistik på data
+- set sammenhængen mellem teori og empiriske observationer
+- fået et første indblik i normalfordelingen
 
 Disse begreber og værktøjer udgør fundamentet for resten af kurset og vil blive anvendt igen og igen i mere avancerede sammenhænge.

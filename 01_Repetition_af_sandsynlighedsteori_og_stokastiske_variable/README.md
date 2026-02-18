@@ -27,9 +27,20 @@ Ross: Kapitel 1-3. Bemærk, kapitel 2-3 er repetition af tidligere stof, mens ka
 
 [Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/01_Repetition_af_sandsynlighedsteori_og_stokastiske_variable/Tutorial_1_notebook.ipynb)
 
+[Se tutorial som markdown](Tutorial_1.md/)
+
 [Sessionnoter](https://drive.google.com/file/d/1D20cFjJA9CmBZQGu_rESr4u4jqoc_x7a/view?usp=sharing)
 
 [Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgD9ITWOtgoOSJJQFfZOslRtAen5QiivW73BLyPj_it1PUo?e=JHXkHj)
+
+## Video Materiale:
+
+
+**Basics of Probability**
+
+Playliste med 7 videoer, der dækker grundlæggende sandsynlighedsbegreber.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=Tm0zx7xWdYH3B_T1&amp;list=PLvxOuBpazmsOGOursPoofaHyz_1NpxbhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 

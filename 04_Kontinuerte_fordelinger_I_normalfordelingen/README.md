@@ -21,6 +21,14 @@ Ross: 4.1., 4.2., 4.4., 4.6. (fokus på det kontinuerte), 5.5.
 
 [Sessionsmateriale]()
 
+## Video Materiale:
+
+**Continuous Probability Distributions**
+
+Playliste med 10 videoer, der dækker kontinuerte fordelinger..
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=jiGDsott_rQOGdWe&amp;list=PLvxOuBpazmsPDZGwqhhjE3KkLWnTD34R0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## Sessionbeskrivelse

@@ -10,25 +10,18 @@ Vi arbejder systematisk med tre fundamentale diskrete fordelinger:
 2.  **Bernoulli** (ét forsøg: succes/fiasko)
 3.  **Binomial** (antal succeser i $n$ forsøg)
 
-Vi lærer at beregne **PMF**, **CDF**, **Middelværdi** og **Varians** i både Python og WolframAlpha.
+Vi lærer at beregne **PMF**, **CDF**, **Middelværdi (Expected Value)** og **Varians** i både Python og WolframAlpha.
 
 ---
 
-## 1. Begreber: PMF, CDF og "Calculator-sprog"
+## 1. Begreber: PMF og CDF
 
 Før vi regner, skal vi forstå notationen. En diskret stokastisk variabel $X$ kan beskrives på to måder:
 
 | Begreb | Forkortelse | Matematisk | Spørgsmål |
 | :--- | :--- | :--- | :--- |
 | **Probability Mass Function** | **PMF** | $P(X = k)$ | Hvad er sandsynligheden for **præcis** $k$? |
-| **Cumulative Distribution Function** | **CDF** | $P(X \le k)$ | Hvad er sandsynligheden for **$k$ eller mindre**? |
-
-### VIGTIGT: Hvorfor hedder det "binomPDF" på lommeregneren?
-Mange studerende bliver forvirrede over kommandoen `binompdf` (fra TI-84), fordi **PDF** normalt står for *Probability Density Function* (kontinuert), mens Binomial er diskret (*Mass Function*).
-
-*   **Forklaring:** Lommeregner-producenterne (TI) valgte at bruge navnet `pdf` til alle fordelinger for at gøre menuerne ensartede.
-*   Når du bruger `binompdf` syntaksen i WolframAlpha eller på en TI-84, beregner du teknisk set **PMF** ($P(X=k)$).
-*   Tilsvarende beregner `binomcdf` den kumulative sum ($P(X \le k)$).
+| **Cumulative Distribution Function** | **CDF** | $P(X \leq k)$ | Hvad er sandsynligheden for **$k$ eller mindre**? |
 
 ---
 
@@ -54,9 +47,9 @@ from scipy.stats import randint, bernoulli, binom
 Alle udfald i $\{a, a+1, \dots, b\}$ er lige sandsynlige.
 Eksempel: Et terningekast $X \sim \text{Uniform}(1,6)$.
 
-*   **PMF:** $P(X=k) = \frac{1}{b-a+1}$
-*   **Middelværdi:** $E[X] = \frac{a+b}{2}$
-*   **Varians:** $\text{Var}(X) = \frac{(b-a+1)^2 - 1}{12}$
+- **PMF:** $P(X=k) = \frac{1}{b-a+1}$
+- **Middelværdi (Expected Value):** $E[X] = \frac{a+b}{2}$
+- **Varians:** $\text{Var}(X) = \frac{(b-a+1)^2 - 1}{12}$
 
 ### 3.2 Python (scipy.stats)
 Der er to måder at skrive koden på. Resultatet er det samme.
@@ -77,59 +70,42 @@ prob_le_4 = randint.cdf(4, 1, 7)
 print(f"Metode 2 (X=3): {prob_3}")
 print(f"Metode 2 (CDF X<=4): {prob_le_4}")
 
-# Middelværdi, Varians og Standardafvigelse
+# Middelværdi (Expected Value), Varians og Standardafvigelse
 print(f"Mean: {randint.mean(1, 7)}, Var: {randint.var(1, 7)}, Std: {randint.std(1, 7)}")
 ```
 
 ### 3.3 WolframAlpha
+
 For uniform fordeling bruger vi primært "Natural" syntaks.
 
-- **PMF \(P(X=3)\)**:
+- **PMF $P(X=3)$**:
 
 ```
-P(X=3) for X ~ DiscreteUniform(1,6)
+P(X=3) DiscreteUniform(1,6)
 ```
 
-- **CDF \(P(X \le 4)\)**:
+- **CDF $P(X \leq 4)$**:
 
 ```
-P(X<=4) for X ~ DiscreteUniform(1,6)
+P(X<=4) DiscreteUniform(1,6)
 ```
 
-- **Middelværdi**:
+- **Middelværdi (Expected Value)**:
 
 ```
-mean of X for X ~ DiscreteUniform(1,6)
-```
-
-- **Middelværdi (kort)**:
-
-```
-mean discrete uniform distribution 1, 6
+mean DiscreteUniformDistribution{1,6}
 ```
 
 - **Varians**:
 
 ```
-variance of X for X ~ DiscreteUniform(1,6)
-```
-
-- **Varians (kort)**:
-
-```
-variance discrete uniform distribution 1, 6
+variance DiscreteUniformDistribution{1,6}
 ```
 
 - **Standardafvigelse**:
 
 ```
-standard deviation of X for X ~ DiscreteUniform(1,6)
-```
-
-- **Standardafvigelse (kort)**:
-
-```
-standard deviation discrete uniform distribution 1, 6
+standard deviation DiscreteUniform(1,6)
 ```
 
 ---
@@ -140,9 +116,9 @@ standard deviation discrete uniform distribution 1, 6
 Ét enkelt forsøg med to udfald: Succes ($1$) eller Fiasko ($0$).
 Parameteren $p$ er sandsynligheden for succes.
 
-*   **PMF:** $P(X=1) = p, \quad P(X=0) = 1-p$
-*   **Middelværdi:** $E[X] = p$
-*   **Varians:** $\text{Var}(X) = p(1-p)$
+- **PMF:** $P(X=1) = p, \quad P(X=0) = 1-p$
+- **Middelværdi (Expected Value):** $E[X] = p$
+- **Varians:** $\text{Var}(X) = p(1-p)$
 
 ### 4.2 Python
 
@@ -163,52 +139,28 @@ print(f"Direkte Std:    {bernoulli.std(p)}")
 
 ### 4.3 WolframAlpha
 
-- **PMF (Natural)**:
+- **PMF**:
 
 ```
-P(X=1) for X ~ Bernoulli(0.4)
+P(X=1) BernoulliDistribution(0.4)
 ```
 
-- **PMF (Logical)**:
+- **Middelværdi (Expected Value)**:
 
 ```
-Bernoulli p=0.4, x=1
-```
-
-- **Middelværdi**:
-
-```
-mean of X for X ~ Bernoulli(0.4)
-```
-
-- **Middelværdi (kort)**:
-
-```
-mean bernoulli distribution 0.4
+mean BernoulliDistribution(0.4)
 ```
 
 - **Varians**:
 
 ```
-variance of X for X ~ Bernoulli(0.4)
-```
-
-- **Varians (kort)**:
-
-```
-variance bernoulli distribution 0.4
+variance BernoulliDistribution(0.4)
 ```
 
 - **Standardafvigelse**:
 
 ```
-standard deviation of X for X ~ Bernoulli(0.4)
-```
-
-- **Standardafvigelse (kort)**:
-
-```
-standard deviation bernoulli distribution 0.4
+standard deviation BernoulliDistribution(0.4)
 ```
 
 ---
@@ -219,12 +171,12 @@ standard deviation bernoulli distribution 0.4
 Beskriver antallet af succeser i $n$ uafhængige Bernoulli-forsøg.
 $X \sim \text{Binomial}(n, p)$.
 
-*   **PMF:** $P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$
-*   **Middelværdi:** $E[X] = np$
-*   **Varians:** $\text{Var}(X) = np(1-p)$
+- **PMF:** $P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$
+- **Middelværdi (Expected Value):** $E[X] = np$
+- **Varians:** $\text{Var}(X) = np(1-p)$
 
 ### 5.2 Python Beregning
-Eksempel: $n=10$ forsøg, $p=0.4$ sandsynlighed. Vi vil finde $P(X=3)$ og $P(X \le 2)$.
+Eksempel: $n=10$ forsøg, $p=0.4$ sandsynlighed. Vi vil finde $P(X=3)$ og $P(X \leq 2)$.
 
 ```python
 n = 10
@@ -249,110 +201,54 @@ print(f"Direkte: PMF(3)={pmf_direct:.4f}, CDF(2)={cdf_direct:.4f}")
 interval = binom.cdf(5, n, p) - binom.cdf(1, n, p)
 print(f"Interval [2,5]: {interval:.4f}")
 
-# Middelværdi, Varians og Standardafvigelse
+# Middelværdi (Expected Value), Varians og Standardafvigelse
 print(f"Mean: {X.mean():.4f}, Var: {X.var():.4f}, Std: {X.std():.4f}")
 ```
 
-### 5.3 WolframAlpha (De 3 versioner)
+### 5.3 WolframAlpha
 
-Her er de tre syntakser. Vælg den, der giver mest mening for dig.
+Her er syntaksen for de centrale beregninger.
 
-#### A. Beregn PMF: $P(X = 3)$
-
-* **Natural (Anbefalet)**:
+- **PMF**:
 
 ```
-P(X = 3) for X ~ Binomial(10, 0.4)
+P(X=3) BinomialDistribution(10, 0.4)
 ```
 
-* **Logical (Kortest)**:
+- **CDF**:
 
 ```
-binomial 10, 0.4, x=3
+P(X <= 3) BinomialDistribution(10, 0.4)
 ```
 
-* **Calculator (TI-84 stil)**:
+- **Survival function** (1 − CDF):
 
 ```
-binompdf(10, 0.4, 3)
+P(X > 3) BinomialDistribution(10, 0.4)
 ```
 
-#### B. Beregn CDF: $P(X \le 3)$
-
-* **Natural**:
+- **Interval**:
 
 ```
-P(X <= 3) for X ~ Binomial(10, 0.4)
+P(2 <= X <= 5) BinomialDistribution(10, 0.4)
 ```
 
-* **Logical**:
+- **Middelværdi (Expected Value)**:
 
 ```
-binomial 10, 0.4, x<=3
+mean BinomialDistribution(10, 0.4)
 ```
 
-* **Calculator** (bemærk **cdf**):
+- **Varians**:
 
 ```
-binomcdf(10, 0.4, 3)
+variance BinomialDistribution(10, 0.4)
 ```
 
-#### C. Beregn Interval: $P(2 \le X \le 5)$
-
-* **Natural**:
+- **Standardafvigelse**:
 
 ```
-P(2 <= X <= 5) for X ~ Binomial(10, 0.4)
-```
-
-* **Logical**:
-
-```
-binomial 10, 0.4, 2<=x<=5
-```
-
-* **Calculator** (kræver manuel subtraktion):
-
-```
-binomcdf(10, 0.4, 5) - binomcdf(10, 0.4, 1)
-```
-
-#### D. Middelværdi, varians og standardafvigelse
-
-* **Middelværdi**:
-
-```
-mean of X for X ~ Binomial(10, 0.4)
-```
-
-* **Middelværdi (kort)**:
-
-```
-mean binomial distribution 10, 0.4
-```
-
-* **Varians**:
-
-```
-variance of X for X ~ Binomial(10, 0.4)
-```
-
-* **Varians (kort)**:
-
-```
-variance binomial distribution 10, 0.4
-```
-
-* **Standardafvigelse**:
-
-```
-standard deviation of X for X ~ Binomial(10, 0.4)
-```
-
-* **Standardafvigelse (kort)**:
-
-```
-standard deviation binomial distribution 10, 0.4
+standard deviation BinomialDistribution(10, 0.4)
 ```
 
 ---
@@ -423,6 +319,6 @@ Efter denne tutorial kan du:
 - **Skelne mellem PMF og CDF** og vide, at lommeregnerens `binompdf`/`binomcdf` svarer til PMF/CDF.
 - **Diskret uniform fordeling:** Beregne PMF, CDF, middelværdi, varians og standardafvigelse i både Python (`randint`) og WolframAlpha.
 - **Bernoulli-fordeling:** Beregne PMF, middelværdi, varians og standardafvigelse i både Python (`bernoulli`) og WolframAlpha.
-- **Binomialfordeling:** Beregne PMF ($P(X=k)$), CDF ($P(X \le k)$), interval-sandsynlighed ($P(a \le X \le b)$), middelværdi, varians og standardafvigelse i både Python (`binom`) og WolframAlpha.
+- **Binomialfordeling:** Beregne PMF ($P(X=k)$), CDF ($P(X \leq k)$), interval-sandsynlighed ($P(a \leq X \leq b)$), middelværdi, varians og standardafvigelse i både Python (`binom`) og WolframAlpha.
 - **Visualisere** en diskret fordeling (fx binomial-PMF) som søjlediagram i Python med Matplotlib.
 - **Simulere** binomialforsøg i Python (`binom.rvs`) og sammenligne empirisk frekvens med den teoretiske fordeling.
