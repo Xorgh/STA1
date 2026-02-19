@@ -98,7 +98,7 @@ password is called a hit.
 3. What are the mean and variance of the number of hits?
 
 ??? answer "&nbsp;"
-    1. The distribution of the number of hits is Binomial with $n = 10^5$ and $p=\frac{10^5}{36^6}$
+    1. The distribution of the number of hits is Binomial with $n = 10^5$ and $p=\frac{10^4}{36^6}$
     2. $P(X=0) = 0.6317$
     3. $\mu = \sigma^2 = 0.4594$
 
