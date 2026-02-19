@@ -30,11 +30,10 @@ Ross: 5.2., 5.3.
 
 [Se tutorial som markdown](Tutorial_3.md)
 
-[Recap og øvelser]()
+[Recap](https://docs.google.com/presentation/d/1vRt7Sr3yVYMuP5WRlOv29226cPdmMrPR/edit?usp=sharing&ouid=116219961489076460261&rtpof=true&sd=true)
 
-[Sessionnoter]()
+[Sessionnoter](https://drive.google.com/file/d/1laRKIxHLa2DBjmzVMQuKyc6vilaPrFNx/view?usp=sharing)
 
-[Sessionsmateriale]()
 
 ## Video Materiale:
 
