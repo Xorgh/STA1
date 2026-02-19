@@ -27,7 +27,7 @@ Ross: 4.1., 4.2., 4.4., 4.6., 5.1, 5.4
   </a>
 </p>
 
-[Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Tutorial_2_notebook.ipynb)
+<a href="Tutorial_2_notebook.ipynb" download>Download tutorial som notebook (.ipynb)</a>
 
 [Se tutorial som markdown](Tutorial_2.md/)
 
@@ -83,7 +83,7 @@ Disse øvelser skal I kunne lave med og uden Python. I må gerne bruge Wolfram A
   </a>
 </p>
 
-[Download løsningsnotebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/02_Diskrete_fordelinger_I_uniform_Bernoulli_og_binomialfordeling/Exercises_solutions.ipynb)
+<a href="Exercises_solutions.ipynb" download>Download løsningsnotebook (.ipynb)</a>
 
 #### Øvelse 1
 A computer system uses passwords that are exactly six

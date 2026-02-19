@@ -19,14 +19,14 @@ Ross: 5.2., 5.3.
 
 <p align="left">
 
-  <a href="Tutorial_3_notebook.ipynb">
+  <a href="Tutorial_3_notebook">
     <img src="../figures/Python-logo-notext.svg.png" alt="Python tutorial" width="100" />
     <br>
     <strong>Se Tutorial 3: Diskrete fordelinger II – Hypergeometrisk, Geometrisk, Negativ binomial og Poisson</strong>
   </a>
 </p>
 
-[Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/Tutorial_3_notebook.ipynb)
+<a href="Tutorial_3_notebook.ipynb" download>Download tutorial som notebook (.ipynb)</a>
 
 [Se tutorial som markdown](Tutorial_3.md)
 
@@ -81,7 +81,16 @@ Indsæt bogreferencer og opgavelister her.
     ol { list-style-type: lower-alpha; }
 </style>
 
-[Download løsningsnotebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/Exercises_solutions.ipynb)
+<p align="left">
+
+  <a href="Exercises_solutions/">
+    <img src="../figures/Python-logo-notext.svg.png" alt="Python løsninger" width="100" />
+    <br>
+    <strong>Se løsninger til øvelserne (Python + WolframAlpha)</strong>
+  </a>
+</p>
+
+<a href="Exercises_solutions.ipynb" download>Download løsningsnotebook (.ipynb)</a>
 
 #### Øvelse 1
 
