@@ -17,6 +17,8 @@ Ross: 5.2., 5.3.
 
 **Bemærk:** Geometrisk fordeling og Negativ binomialfordeling dækkes ikke i Ross, men gennemgås til forelæsningen.
 
+Videoserien giver en hurtig gennemgang af diskrete fordelinger, og er en god introduktion til kurset og kan bruges som erstatning for læsestoffet.
+
 <p align="left">
 
   <a href="Tutorial_3_notebook">

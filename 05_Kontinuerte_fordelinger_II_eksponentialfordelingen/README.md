@@ -2,17 +2,22 @@
 tags:
     - Normalfordeling
     - Eksponentialfordeling
+    - Standardnormalfordeling
+    - Standardisering
+    - Z-score
     - Hukommelsesløshed
     - Rate-parameter
     - Levetidsanalyse
     - Poisson-process
     - Lineære transformationer
 ---
-<h1 align="center">Kontinuerte fordelinger II: eksponentialfordelingen og normalfordeling fortsat</h1>
+<h1 align="center">Kontinuerte fordelinger II: normalfordeling og eksponentialfordeling</h1>
 
 ## Sessionsmateriale:
 
-Ross: 5.5. (fortsat), 5.6.
+Ross: 5.5., 5.6.
+
+Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god introduktion til kurset og kan bruges som erstatning for læsestoffet. Det samme gælder for videoen om eksponentialfordelingen.
 
 [Recap og øvelser]()
 
@@ -24,7 +29,7 @@ Ross: 5.5. (fortsat), 5.6.
 
 **Exponential Distribution**
 
-En enkelt video, der dækker eksponentialfordelingen.
+En enkelt video, der dækker eksponentialfordelingen, som supplement til videoserien om kontinuerte fordelinger.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C7V3d2yB58U?si=twLlJkku_rxrojdH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -32,13 +37,16 @@ En enkelt video, der dækker eksponentialfordelingen.
 
 ## Sessionbeskrivelse
 
-Denne session har to formål. For det første samler vi op på **normalfordelingen** fra sidst. Det er et omfattende emne, og vi bruger tid på at sikre, at forståelsen af standardisering og brug af fordelingen sidder fast. Vi ser evt. på lineære transformationer af normalfordelte variable (f.eks. $Y = aX + b$), som er en vigtig egenskab i dataanalyse.
+I denne session arbejder vi målrettet med to centrale kontinuerte standardfordelinger: **normalfordelingen** og **eksponentialfordelingen**.
 
-Herefter introducerer vi **eksponentialfordelingen**. Hvor normalfordelingen ofte beskriver *målinger*, beskriver eksponentialfordelingen typisk *levetider* eller *ventetider* mellem hændelser (f.eks. tiden mellem to servernedbrud). Den har en unik og kontraintuitiv egenskab kaldet **hukommelsesløshed** (memorylessness), som vi skal forstå betydningen af. Vi vil også kort berøre sammenhængen til Poisson-fordelingen: Hvis ankomster (f.eks. bugs) er Poisson-fordelte, er tiden mellem dem eksponentialfordelt.
+Først behandler vi **normalfordelingen** (Gauss-kurven): parametrene $\mu$ og $\sigma^2$, standardnormalfordelingen $N(0,1)$, standardisering med Z-scores samt beregning af sandsynligheder og fraktiler. Vi ser også på lineære transformationer af normalfordelte variable (f.eks. $Y = aX + b$), som er en vigtig egenskab i dataanalyse.
+
+Derefter arbejder vi med **eksponentialfordelingen**. Hvor normalfordelingen ofte beskriver *målinger*, beskriver eksponentialfordelingen typisk *levetider* eller *ventetider* mellem hændelser (f.eks. tiden mellem to servernedbrud). Den har en unik egenskab kaldet **hukommelsesløshed** (memorylessness), og vi kobler den til Poisson-processer: Hvis ankomster er Poisson-fordelte, er tiden mellem dem eksponentialfordelt.
 
 ### Centrale begreber
 
-- **Normalfordeling (fortsat):** Anvendelse og egenskaber
+- **Normalfordeling:** Parametre, standardisering og anvendelse
+- **Standardnormalfordeling:** $N(0,1)$ og Z-score
 - **Eksponentialfordeling:** Tæthedsfunktion $f(x) = \lambda e^{-\lambda x}$
 - **Rate-parameteren ($\lambda$):** Sammenhæng med middelværdi ($1/\lambda$)
 - **Hukommelsesløshed:** $P(X > s+t | X > s) = P(X > t)$
@@ -46,7 +54,7 @@ Herefter introducerer vi **eksponentialfordelingen**. Hvor normalfordelingen oft
 
 !!! tip "Læringsmål"
 
-    - Opnå rutine i beregninger med normalfordelingen.
+    - Opnå rutine i beregninger med normalfordelingen (inkl. Z-standardisering).
     - Kunne genkende situationer, hvor eksponentialfordelingen er en passende model (ventetider/levetider).
     - Forstå og forklare begrebet hukommelsesløshed, og hvorfor det er centralt for eksponentialfordelingen.
     - Kunne veksle mellem at beskrive en proces via hændelsesrate (Poisson) og ventetid (Eksponential).

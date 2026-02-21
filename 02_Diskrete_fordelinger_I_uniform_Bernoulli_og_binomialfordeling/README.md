@@ -18,6 +18,8 @@ tags:
 
 Ross: 4.1., 4.2., 4.4., 4.6., 5.1, 5.4
 
+Videoserien giver en hurtig gennemgang af diskrete fordelinger, og er en god introduktion til kurset og kan bruges som erstatning for læsestoffet.
+
 <p align="left">
 
   <a href="Tutorial_2_notebook/">

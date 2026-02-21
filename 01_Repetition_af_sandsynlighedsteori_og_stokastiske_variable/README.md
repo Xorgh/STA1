@@ -16,6 +16,8 @@ tags:
 
 Ross: Kapitel 1-3. Bemærk, kapitel 2-3 er repetition af tidligere stof, mens kapitel 1 introducerer nye statistiske begreber.
 
+Videoen giver en hurtig gennemgang af sandsynlighedsregning og statistik, og er en god introduktion til kurset.
+
 <p align="left">
 
   <a href="Tutorial_1_notebook/">
