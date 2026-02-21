@@ -13,6 +13,19 @@ Ross: 4.1., 4.2., 4.4., 4.6. (fokus på det kontinuerte).
 
 Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god introduktion til kurset og kan bruges som erstatning for læsestoffet.
 
+<p align="left">
+
+  <a href="Tutorial_4_notebook/">
+    <img src="../figures/Python-logo-notext.svg.png" alt="Python tutorial" width="100" />
+    <br>
+    <strong>Se Tutorial 4: Kontinuerte fordelinger I (foundations)</strong>
+  </a>
+</p>
+
+<a href="Tutorial_4_notebook.ipynb" download>Download tutorial som notebook (.ipynb)</a>
+
+[Se tutorial som markdown](Tutorial_4.md/)
+
 [Recap og øvelser]()
 
 [Sessionnoter]()
@@ -63,3 +76,4 @@ Indsæt bogreferencer og opgavelister her.
 </style>
 
 *Øvelser indsættes.*
+
