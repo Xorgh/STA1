@@ -11,7 +11,7 @@ tags:
 
 Ross: 4.1., 4.2., 4.4., 4.6. (fokus på det kontinuerte).
 
-Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god introduktion til kurset og kan bruges som erstatning for læsestoffet.
+Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god introduktion til emnet og kan bruges som erstatning for læsestoffet.
 
 <p align="left">
 
