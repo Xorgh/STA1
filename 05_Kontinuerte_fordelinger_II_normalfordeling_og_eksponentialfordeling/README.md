@@ -27,6 +27,12 @@ Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god 
 
 ## Video Materiale:
 
+**Continuous Probability Distributions** (5-7)
+
+Playliste med 10 videoer, der dækker kontinuerte fordelinger - også til session 5.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=jiGDsott_rQOGdWe&amp;list=PLvxOuBpazmsPDZGwqhhjE3KkLWnTD34R0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Exponential Distribution**
 
 En enkelt video, der dækker eksponentialfordelingen, som supplement til videoserien om kontinuerte fordelinger.

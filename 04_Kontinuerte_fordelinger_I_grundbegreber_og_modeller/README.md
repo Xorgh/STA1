@@ -34,7 +34,7 @@ Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god 
 
 ## Video Materiale:
 
-**Continuous Probability Distributions**
+**Continuous Probability Distributions** (1-4)
 
 Playliste med 10 videoer, der dækker kontinuerte fordelinger - også til session 5.
 
