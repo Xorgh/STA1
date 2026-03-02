@@ -149,7 +149,9 @@ nav:
     - "03 Diskrete fordelinger II: hypergeometrisk, geometrisk, negativ binomial- og Poissonfordeling":
       - 03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/README.md
       - "Tutorial 3 (notebook)": 03_Diskrete_fordelinger_II_hypergeometrisk_geometrisk_negativ_binomial_og_Poissonfordeling/Tutorial_3_notebook.ipynb
-    - "04 Kontinuerte fordelinger I: grundbegreber og modeller": 04_Kontinuerte_fordelinger_I_grundbegreber_og_modeller/README.md
+    - "04 Kontinuerte fordelinger I: grundbegreber og modeller":
+      - 04_Kontinuerte_fordelinger_I_grundbegreber_og_modeller/README.md
+      - "Tutorial 4 (notebook)": 04_Kontinuerte_fordelinger_I_grundbegreber_og_modeller/Tutorial_4_notebook.ipynb
     - "05 Kontinuerte fordelinger II: normalfordeling og eksponentialfordeling": 05_Kontinuerte_fordelinger_II_normalfordeling_og_eksponentialfordeling/README.md
     - "06 Fordelinger af stikprøvestørrelser (sampling distributions)": 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/README.md
     - "07 Intervalestimation og konfidensintervaller": 07_Intervalestimation_og_konfidensintervaller/README.md
