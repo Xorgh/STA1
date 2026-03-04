@@ -92,6 +92,43 @@ Indsæt bogreferencer og opgavelister her.
 **Bemærk:** Alle dagens øvelser er taget fra eksamensopgaver. Du kan derfor forvente lignende opgaver på eksamen.
 
 #### Øvelse 1
+Let $X \sim N(3,9)$.
+
+1. Find $P(X>0)$.
+2. Find $P(-3<X<8)$.
+3. Find $P(X>5 | X>3)$.
+
+??? answer "&nbsp;"
+    1. \(P(X>0)=\Phi(1) \approx 0.8413\)
+    2. \(P(-3<X<8)=\Phi\left(\frac{5}{3}\right)-\Phi(-2) \approx 0.9295\).
+    3. \(P(X>5 \mid X>3)=2 \times\left(1-\Phi\left(\frac{2}{3}\right)\right) \approx 0.5050\)
+
+#### Øvelse 2
+Let $X \sim N(3,9)$ and $Y=5-X$.
+
+1. Find $P(X>2)$.
+2. Find $P(-1<Y<3)$.
+3. Find $P(X>4 |Y<2)$.
+
+??? answer "&nbsp;"
+    1. \(P(X>2)=1-\Phi\left(\frac{1}{3}\right) \approx 0.6306\)
+    2. \(P(-1<Y<3)=\Phi\left(\frac{1}{3}\right)-\Phi(-1) \approx 0.4719 \).
+    3. \(P(X>4 \mid Y<2)=2\left(1-\Phi\left(\frac{1}{3}\right)\right) \approx 0.7389 .\)
+
+#### Øvelse 3
+
+Let \(X \sim N(2,4)\) and \(Y=3-2 X\).
+
+1. Find \(P(X>1)\).
+2. Find \(P(-2<Y<1)\).
+3. Find \(P(X>2 \mid Y<1)\).
+
+??? answer "&nbsp;"
+    1. 0.6915
+    2. 0.2902
+    3. 0.7231
+
+#### Øvelse 4
 A central database server receives, on the average, 25 requests per second from its clients. Assuming that requests received by a database follow a Poisson distribution
 
 <ol start="1">
@@ -115,31 +152,7 @@ Let T be the time in seconds between requests.
     4. \(P(T \leq 0.01) = 0.2212\)
     5. \(P(T > 0.1) = 0.0821\)
 
-#### Øvelse 2
-Let $X \sim N(3,9)$.
-
-1. Find $P(X>0)$.
-2. Find $P(-3<X<8)$.
-3. Find $P(X>5 | X>3)$.
-
-??? answer "&nbsp;"
-    1. \(P(X>0)=\Phi(1) \approx 0.8413\)
-    2. \(P(-3<X<8)=\Phi\left(\frac{5}{3}\right)-\Phi(-2) \approx 0.9295\).
-    3. \(P(X>5 \mid X>3)=2 \times\left(1-\Phi\left(\frac{2}{3}\right)\right) \approx 0.5050\)
-
-#### Øvelse 3
-Let $X \sim N(3,9)$ and $Y=5-X$.
-
-1. Find $P(X>2)$.
-2. Find $P(-1<Y<3)$.
-3. Find $P(X>4 |Y<2)$.
-
-??? answer "&nbsp;"
-    1. \(P(X>2)=1-\Phi\left(\frac{1}{3}\right) \approx 0.6306\)
-    2. \(P(-1<Y<3)=\Phi\left(\frac{1}{3}\right)-\Phi(-1) \approx 0.4719 \).
-    3. \(P(X>4 \mid Y<2)=2\left(1-\Phi\left(\frac{1}{3}\right)\right) \approx 0.7389 .\)
-
-#### Øvelse 4
+#### Øvelse 5
 Empirical evidence suggests that the number of battery charges of a Tesla Model S ( 85 kWh ) follows a Poisson distribution with an average of 2.1 charges per 1,000 km.
 
 <ol start="1">
@@ -159,16 +172,3 @@ Now, let \(K\) denote the range in kilometers between charges.
     2. 0.3499
     3. 476.19
     4. 0.5672
-
-#### Øvelse 5
-
-Let \(X \sim N(2,4)\) and \(Y=3-2 X\).
-
-1. Find \(P(X>1)\).
-2. Find \(P(-2<Y<1)\).
-3. Find \(P(X>2 \mid Y<1)\).
-
-??? answer "&nbsp;"
-    1. 0.6915
-    2. 0.2902
-    3. 0.7231
