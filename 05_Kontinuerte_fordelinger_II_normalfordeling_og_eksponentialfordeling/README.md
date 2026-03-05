@@ -32,11 +32,10 @@ Videoserien giver en hurtig gennemgang af kontinuerte fordelinger, og er en god 
 
 [Se tutorial som markdown](Tutorial_5.md/)
 
-[Recap og øvelser]()
+[Recap og øvelser](https://drive.google.com/file/d/1zB5wOkh3L3f_ckAaEpSEahkDrFnL-gwB/view?usp=sharing)
 
-[Sessionnoter]()
+[Sessionnoter](https://drive.google.com/file/d/1qTGWWIihQLTLNe0e-0nUwGIbpkH7XWkS/view?usp=sharing)
 
-[Sessionsmateriale]()
 
 ## Video Materiale:
 
