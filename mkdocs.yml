@@ -155,7 +155,9 @@ nav:
     - "05 Kontinuerte fordelinger II: normalfordeling og eksponentialfordeling":
       - 05_Kontinuerte_fordelinger_II_normalfordeling_og_eksponentialfordeling/README.md
       - "Tutorial 5 (notebook)": 05_Kontinuerte_fordelinger_II_normalfordeling_og_eksponentialfordeling/Tutorial_5_notebook.ipynb
-    - "06 Fordelinger af stikprøvestørrelser (sampling distributions)": 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/README.md
+    - "06 Fordelinger af stikprøvestørrelser (sampling distributions)":
+      - 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/README.md
+      - "Tutorial 6 (notebook)": 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/Tutorial_6_notebook.ipynb
     - "07 Intervalestimation og konfidensintervaller": 07_Intervalestimation_og_konfidensintervaller/README.md
     - "08 Hypotesetest": 08_Hypotesetest/README.md
     - "09 Simpel lineær regression": 09_Simpel_lineaer_regression/README.md
