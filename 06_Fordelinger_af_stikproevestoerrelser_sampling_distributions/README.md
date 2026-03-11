@@ -71,4 +71,144 @@ Indsæt bogreferencer og opgavelister her.
     ol { list-style-type: lower-alpha; }
 </style>
 
-*Øvelser indsættes.*
+Alle øvelser ligger i Del 1, udtagen 5 som ligger i Del 2.
+
+#### Øvelse 1
+Scientists at the Hopkins Memorial Forest in western Massachusetts have been collecting meteorological and environmental data in the forest data for more than 100 years. In the past few years, sulfate content in water samples from Birch Brook has averaged $7.48 \mathrm{mg} / \mathrm{L}$ with a standard deviation of $1.60 \mathrm{mg} / \mathrm{L}$.
+
+1. What is the standard error of the sulfate in a collection of 10 water samples?
+
+2. If 10 students measure the sulfate in their samples, what is the probability that their average sulfate will be between 6.49 and $8.47 \mathrm{mg} / \mathrm{L}$?
+
+3. What do you need to assume for the probability calculated in (b) to be accurate?
+
+??? answer "&nbsp;"
+    1. 0.506
+    2. 0.9496
+    3. The samples must be independent and the population approximately normal.
+
+#### Øvelse 2
+
+Researchers in the Hopkins Forest (see Øvelse 1) also count the number of maple trees (genus acer) in plots throughout the forest. The following is a histogram of the number of live maples in 1002 plots sampled over the past 20 years. The average number of maples per plot was 19.86 trees with a standard deviation of 23.65 trees.
+
+![Histogram](ex2_hist.png)
+
+1. If we took the mean of a sample of eight plots, what would be the standard error of the mean?
+
+2. Using the central limit theorem, what is the probability that the mean of the eight would be within 1 standard error of the mean?
+
+3. Why might you think that the probability that you calculated in (b) might not be very accurate?
+
+??? answer "&nbsp;"
+    1. 8.3615
+    2. 0.6827
+    3. The data is strongly right-skewed and the sample size is too small to apply the central limit theorem.
+
+#### Øvelse 3
+A highway department has enough salt to handle a total of 80 inches of snowfall. Suppose the daily amount of snow has a mean of 1.5 inches and a standard deviation of .3 inch.
+
+1. Approximate the probability that the salt on hand will suffice for the next 50 days.
+
+2. What assumption did you make in solving part (a)? Do you think this assumption is justified? Explain briefly.
+
+??? answer "&nbsp;"
+    1. 0.9908
+    2. The preceding assumes that the daily amounts of snow are independent, a dubious assumption.
+
+#### Øvelse 4
+An instructor knows from past experience that student exam scores have mean 77 and standard deviation 15. At present the instructor is teaching two separate classes — one of size 25 and the other of size 64.
+
+1. Approximate the probability that the average test score in the class of size 25 lies between 72 and 82.
+2. Repeat part (a) for a class of size 64.
+3. What is the approximate probability that the average test score in the class of size 25 is higher than that of the class of size 64?
+4. Suppose the average scores in the two classes are 76 and 83. Which class, the one of size 25 or the one of size 64, do you think was more likely to have averaged 83?
+
+??? answer "&nbsp;"
+    1. 0.9044
+    2. 0.9424
+    3. 0.5
+    4. Class of size 25
+
+#### Øvelse 5
+
+**Solve this problem using Python.**
+
+According to IDA’s salary statistics, the typical software engineer earns between DKK 45,781 and DKK 59,892 per month after five years of experience. The data is based on a sample of 378 software engineers with more than five years of experience.
+
+Assume that salaries after five years are approximately normally distributed, and assume that the quoted “typical” interval corresponds approximately to one standard deviation around the mean, that is, $\mu \pm \sigma$.
+
+The maximum recorded salary in the sample was DKK 67,476.
+
+Based on this information:
+
+1. Estimate the mean and standard deviation of the salary distribution.
+2. What is the probability that a randomly selected software engineer earns more than DKK 55,000 per month?
+3. If the 15 software engineers in your class are viewed as a random sample from this population, what is the probability that their average salary exceeds DKK 55,000 per month after five years of experience?
+4. What is the probability that a randomly selected software engineer earns more than the maximum recorded salary of DKK 67,476 after five years of experience?
+5. If the 15 software engineers in your class are viewed as a random sample from this population, what proportion of them would you expect to earn more than DKK 67,476 after five years of experience?
+
+??? hint
+    Start by extracting the parameters of the normal model.
+
+    The “typical” interval is assumed to correspond to
+
+    $$
+    \mu - \sigma \quad \text{to} \quad \mu + \sigma .
+    $$
+
+    Therefore the mean is the midpoint of the interval, and the standard deviation is the distance from the mean to either endpoint.
+
+    Once you have $\mu$ and $\sigma$, model the salary as
+
+    $$
+    X \sim N(\mu,\sigma).
+    $$
+
+    In Python you can compute probabilities directly using the normal distribution (for example with `scipy.stats.norm`). There is no need to convert to a standard normal variable manually.
+
+    For the sample of 15 students, remember that the average salary follows the sampling distribution
+
+    $$
+    \bar X \sim N\!\left(\mu,\frac{\sigma}{\sqrt{n}}\right).
+    $$
+
+    The quantity $\sigma/\sqrt{n}$ is called the **standard error**.
+
+    Finally, if $p$ is the probability that one engineer earns more than a certain amount, then the expected proportion of engineers in a sample with that property is also $p$, and the expected number in a sample of size $n$ is $np$.
+
+??? answer "&nbsp;"
+    1. 52836.6, 7055.5
+    2. 0.3796
+    3. 0.1175
+    4. 0.0189
+    5. 0.285 people
+
+#### Øvelse 6
+
+Suppose that \(X_1, X_2, X_3\) are independent random variables with the common probability mass function
+
+\[
+P(X_i = 0) = 0.2, \quad P(X_i = 1) = 0.3, \quad P(X_i = 3) = 0.5, \qquad i = 1,2,3
+\]
+
+
+1. Determine \(E[X_2]\) and \(\mathrm{Var}(X_2)\).
+
+2. Determine \(E[X_3]\) and \(\mathrm{Var}(X_3)\).
+
+??? hint
+    First compute \(E[X_i]\) and \(\mathrm{Var}(X_i)\) from the given probability mass function.
+
+    Then use the facts that expectation is linear and that the variance of a sum of independent random variables is the sum of their variances.
+
+    Remember that
+
+    \[
+    X_2 = \frac{X_1 + X_2}{2}, \qquad
+    X_3 = \frac{X_1 + X_2 + X_3}{3}.
+    \]
+
+    You may find it helpful to first compute \(E[X_i]\) and \(\mathrm{Var}(X_i)\), and then apply the formulas for \(E[aX+bY]\) and \(\mathrm{Var}(aX+bY)\).
+
+
+??? answer "&nbsp;"
