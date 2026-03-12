@@ -127,7 +127,7 @@ An instructor knows from past experience that student exam scores have mean 77 a
 
 ??? answer "&nbsp;"
     1. 0.9044
-    2. 0.9424
+    2. 0.9924
     3. 0.5
     4. Class of size 25
 
