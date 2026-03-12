@@ -26,9 +26,11 @@ Ross: Kapitel 6
 
 [Se tutorial som markdown](Tutorial_6.md/)
 
-[Recap og øvelser]()
+[Recap og øvelser](https://drive.google.com/file/d/1WmQhsfPEkd-_-Gs8gI3QzfZ9_G5D0NDy/view?usp=sharing)
 
-[Sessionnoter]()
+[Sessionnoter](https://drive.google.com/file/d/1YQHZe0Ukj0Jkhn3vTrjLkFKJfVwcWUOg/view?usp=sharing)
+
+[Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgApE6KcPwR8SpOCRQ_VyjQbAdO5UUeC-Ju8A-OxEwBZlOA?e=cepbz7)
 
 ## Video Materiale:
 
