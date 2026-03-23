@@ -158,7 +158,9 @@ nav:
     - "06 Fordelinger af stikprøvestørrelser (sampling distributions)":
       - 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/README.md
       - "Tutorial 6 (notebook)": 06_Fordelinger_af_stikproevestoerrelser_sampling_distributions/Tutorial_6_notebook.ipynb
-    - "07 Intervalestimation og konfidensintervaller": 07_Intervalestimation_og_konfidensintervaller/README.md
+    - "07 Intervalestimation og konfidensintervaller":
+      - 07_Intervalestimation_og_konfidensintervaller/README.md
+      - "Tutorial 7 (notebook)": 07_Intervalestimation_og_konfidensintervaller/Tutorial_7_notebook.ipynb
     - "08 Hypotesetest": 08_Hypotesetest/README.md
     - "09 Simpel lineær regression": 09_Simpel_lineaer_regression/README.md
     - "10 Variansanalyse (ANOVA)": 10_Variansanalyse_ANOVA/README.md
