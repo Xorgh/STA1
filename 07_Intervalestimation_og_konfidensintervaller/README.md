@@ -28,8 +28,6 @@ Ross: 7.1, 7.3, 7.4, 7.5.
 
 <a href="Tutorial_7_notebook.ipynb" download>Download tutorial som notebook (.ipynb)</a>
 
-[Download tutorial som notebook (.ipynb)](https://raw.githubusercontent.com/RBrooksDK/STA_26/main/07_Intervalestimation_og_konfidensintervaller/Tutorial_7_notebook.ipynb)
-
 [Se tutorial som markdown](Tutorial_7.md/)
 
 [Recap og øvelser]()
