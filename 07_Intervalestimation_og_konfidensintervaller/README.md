@@ -36,6 +36,28 @@ Ross: 7.1, 7.3, 7.4, 7.5.
 
 [Sessionsmateriale]()
 
+## Video Materiale:
+
+**Intervalestimation og konfidensintervaller**
+
+Der er tre playlister med hhv. 10, 10, og 6 videoer. Som I kan regne ud er det noget mere omfattende end det, vi skal igennem, men jeg har angivet i de to sidste videoer, hvilke videoer der er relevante for os.
+
+*Confidence Intervals for Population Means*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=G6713vt7XnI1WgQp&amp;list=PLvxOuBpazmsMdPBRxBTvwLv5Lhuk0tuXh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+*Inference for Variances*
+
+Kun video 1-4.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=rS6kUwd35QNLALZ5&amp;list=PLvxOuBpazmsMNIgaarUNmvs70sAjiPeVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+*Inference for Proportions*
+
+Kun video 1-4.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=9GbjagyFcXpfLJSK&amp;list=PLvxOuBpazmsOXoys_s9qkbspk_BlOtWcW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## Sessionbeskrivelse
