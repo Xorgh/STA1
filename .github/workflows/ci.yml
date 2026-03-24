@@ -28,6 +28,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
+          # Keep this pinned to a widely supported runtime for MkDocs plugins.
+          # Python 3.14 currently breaks mkdocs-jupyter/nbconvert in this project.
           python-version: "3.12"
 
       - name: Install dependencies

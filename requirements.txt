@@ -1,5 +1,6 @@
 mkdocs>=1.5,<2
 mkdocs-material>=9.1.6,<10
+# Pinned for CI stability with Python 3.12 (3.14 caused template errors in mkdocs-jupyter).
 mkdocs-jupyter==0.24.8
 nbconvert<8
 mkdocs-glightbox>=0.3.2,<1
