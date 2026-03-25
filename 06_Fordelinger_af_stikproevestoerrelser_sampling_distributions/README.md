@@ -215,3 +215,5 @@ P(X_i = 0) = 0.2, \quad P(X_i = 1) = 0.3, \quad P(X_i = 3) = 0.5, \qquad i = 1,2
 
 ??? answer "&nbsp;"
     \(E\left[\bar{X}_2\right]=E\left[\bar{X}_3\right]=1.8, \operatorname{Var}\left(\bar{X}_2\right)=.78, \operatorname{Var}\left(\bar{X}_3\right)=.52\)
+
+    [Python solution](oevelse_6.ipynb)
