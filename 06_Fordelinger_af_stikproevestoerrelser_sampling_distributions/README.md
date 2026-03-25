@@ -194,9 +194,9 @@ P(X_i = 0) = 0.2, \quad P(X_i = 1) = 0.3, \quad P(X_i = 3) = 0.5, \qquad i = 1,2
 \]
 
 
-1. Determine \(E[X_2]\) and \(\mathrm{Var}(X_2)\).
+1. Determine \(E\left[\bar{X}_2\right]\) and \(\operatorname{Var}\left(\bar{X}_2\right)\).
 
-2. Determine \(E[X_3]\) and \(\mathrm{Var}(X_3)\).
+2. Determine \(E\left[\bar{X}_3\right]\) and \(\operatorname{Var}\left(\bar{X}_3\right)\).
 
 ??? hint
     First compute \(E[X_i]\) and \(\mathrm{Var}(X_i)\) from the given probability mass function.
