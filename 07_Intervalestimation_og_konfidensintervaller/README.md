@@ -30,11 +30,7 @@ Ross: 7.1, 7.3, 7.4, 7.5.
 
 [Se tutorial som markdown](Tutorial_7.md/)
 
-[Recap og øvelser]()
-
-[Sessionnoter]()
-
-[Sessionsmateriale]()
+[Sessionnoter](https://drive.google.com/file/d/1HV1sbPdtBIYqaGUiHVdnnVXospCYBhAK/view?usp=sharing)
 
 ## Video Materiale:
 
