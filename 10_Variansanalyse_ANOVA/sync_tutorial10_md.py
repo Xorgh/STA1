@@ -1,13 +1,13 @@
-"""Opdater Tutorial_8.md fra Tutorial_8_notebook.ipynb — **.ipynb er master** (MkDocs læser .md).
+"""Opdater Tutorial_10.md fra Tutorial_10_notebook.ipynb — **.ipynb er master** (MkDocs læser .md).
 
-Kør efter du har rettet notebook:  python sync_tutorial8_md.py
+Kør efter du har rettet notebook:  python sync_tutorial10_md.py
 """
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-nb_path = ROOT / "Tutorial_8_notebook.ipynb"
-md_path = ROOT / "Tutorial_8.md"
+nb_path = ROOT / "Tutorial_10_notebook.ipynb"
+md_path = ROOT / "Tutorial_10.md"
 
 nb = json.loads(nb_path.read_text(encoding="utf-8"))
 parts: list[str] = []
@@ -25,10 +25,11 @@ for cell in nb["cells"]:
             parts.append(open_fence + text + close_fence)
 
 body = "\n".join(parts).strip() + "\n"
-insert = "**Notebook-version:** [Tutorial_8_notebook.ipynb](Tutorial_8_notebook.ipynb)\n\n"
-idx = body.find("\n\n## ")
-if idx != -1:
-    body = body[: idx + 1] + insert + body[idx + 1 :]
+insert = "**Notebook-version:** [Tutorial_10_notebook.ipynb](Tutorial_10_notebook.ipynb)\n\n"
+if "**Notebook-version:**" not in body[:1500]:
+    idx = body.find("\n\n## ")
+    if idx != -1:
+        body = body[: idx + 1] + insert + body[idx + 1 :]
 
 md_path.write_text(body, encoding="utf-8")
 print("Synced", md_path)
