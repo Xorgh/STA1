@@ -33,11 +33,9 @@ Ross: 8.1, 8.2, 8.3, 8.4 og 8.6. Afsnit 8.5 (test af varians med $\chi^2$) og 8.
 
 [Se tutorial som markdown](Tutorial_8.md/)
 
-[Recap og øvelser]()
-
 [Sessionnoter]()
 
-[Sessionsmateriale]()
+[Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgBpqz5s2aMPT6m9AnrKA1SRAdYPWJdWNYdLgbykYLSSubE?e=ed5PUw
 
 ## Video Materiale:
 

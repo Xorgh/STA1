@@ -110,6 +110,50 @@ print(f"SST={SST:.4f}, SSB={SSB:.4f}, SSW={SSW:.4f}")
 print(f"F = {F_manual:.4f}, df = ({df_between}, {df_within})")
 ```
 
+### 2.1 Ufuldstændig ANOVA-tabel (som i **Øvelse 4**)
+
+I afsnit **2** beregnede vi SS og MS **ud fra rå observationer**. I eksamenssæt kan I i stedet få en **tabel med huller** (kun nogle DF, MS, $F$ eller total-DF er angivet). Så bruger I **samme definitioner baglæns**:
+
+1. **Total DF** $= N-1$ giver antal observationer $N$.
+2. **Antal faktor-niveauer** $k$ giver $\mathrm{DF}_{\text{factor}} = k-1$ og $\mathrm{DF}_{\text{error}} = N-k$ (ensidig ANOVA, balanceret design: $N/k$ gentagelser pr. niveau).
+3. **$\mathrm{SS}_{\text{factor}} = \mathrm{MS}_{\text{factor}} \cdot \mathrm{DF}_{\text{factor}}$** (fordi $\mathrm{MS} = \mathrm{SS}/\mathrm{DF}$).
+4. **$F = \mathrm{MS}_{\text{factor}}/\mathrm{MS}_{\text{error}}$** giver $\mathrm{MS}_{\text{error}} = \mathrm{MS}_{\text{factor}}/F$, og **$\mathrm{SS}_{\text{error}} = \mathrm{MS}_{\text{error}} \cdot \mathrm{DF}_{\text{error}}$**.
+5. **$\mathrm{SS}_{\text{total}} = \mathrm{SS}_{\text{factor}} + \mathrm{SS}_{\text{error}}$** (samme som $\mathrm{SST} = \mathrm{SSB} + \mathrm{SSW}$).
+
+**$P$-værdi** når $F$ og begge DF er kendt: under $H_0$ er $F \sim F_{\mathrm{df}_1,\,\mathrm{df}_2}$ med $\mathrm{df}_1 = k-1$, $\mathrm{df}_2 = N-k$. Den **øvre hale** (omnibus-test) er
+
+$$P\bigl(F \ge F_{\text{obs}}\bigr) = 1 - F_{\mathrm{cdf}}(F_{\text{obs}}).$$
+
+I SciPy: **`scipy.stats.f.sf(F_obs, df1, df2)`** (`sf` = *survival function* = hale til højre, dvs. $P(F \ge F_{\text{obs}})$). Med $F$-tabeller angiver I ofte **grænser** for $P$-værdien (fx $0.01 < P < 0.025$) ved at sammenligne $F_{\text{obs}}$ med kritiske værdier for udvalgte $\alpha$.
+
+Nedenfor: **samme tal** som i Øvelse 4 (fire niveauer, total DF $=31$, $\mathrm{MS}_{\text{factor}} = 330.4716$, $F = 4.42$).
+
+
+```python
+from scipy import stats
+
+# Som Øvelse 4: a = 4 niveauer, total DF = 31 => N = 32, balanceret r = 8
+k = 4
+df_total = 31
+N = df_total + 1
+df_factor = k - 1
+df_error = N - k
+MS_factor = 330.4716
+F_obs = 4.42
+
+SS_factor = MS_factor * df_factor
+MS_error = MS_factor / F_obs
+SS_error = MS_error * df_error
+SS_total = SS_factor + SS_error
+p_upper = stats.f.sf(F_obs, df_factor, df_error)
+
+print("N =", N, "  replicates per level (balanced):", N // k)
+print("DF factor, error:", df_factor, df_error)
+print("SS factor, error, total:", round(SS_factor, 4), round(SS_error, 4), round(SS_total, 4))
+print("MS error:", round(MS_error, 4))
+print("P-value P(F >= F_obs), df = (3, 28):", round(p_upper, 6))
+```
+
 ---
 
 ## 3. SciPy: `f_oneway`
@@ -238,4 +282,7 @@ print(f"Levene: stat={lev_stat:.4f}, p={lev_p:.4f}")
 | Parvise forskelle | Efter signifikant ANOVA | `pairwise_tukeyhsd` eller `tukey_hsd` |
 | Ens varians (groft) | Levene | `scipy.stats.levene` |
 
-Når øvelser til session 10 lægges ind, følger de samme konventioner som øvrige sessioner på kurset.
+* **Øvelse 1:** three resins, impurity concentration — `Resin_impurities.xlsx`.
+* **Øvelse 2:** oscilloscope filters / radar — `Scope_filter_intensity.xlsx`.
+* **Øvelse 3:** two diets, weight loss — `Diet_weight_loss.xlsx` (ANOVA with $k=2$ and $t$-test).
+* **Øvelse 4:** complete partial ANOVA table (four levels).
