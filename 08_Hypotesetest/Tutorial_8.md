@@ -1,10 +1,11 @@
 # Tutorial – Session 8
+**Notebook-version:** [Tutorial_8_notebook.ipynb](Tutorial_8_notebook.ipynb)
+
 
 ## Hypotesetest
 
 Denne tutorial følger **Ross, kapitel 8**, afsnit **8.1**, **8.2**, **8.3**, **8.4** og **8.6** (jf. sessionbeskrivelsen). Afsnit **8.5** (test af varians med $\chi^2$) og **8.7** (Poisson) er **ikke** med. For hvert emne gives først de centrale formler og fortolkninger, derefter **Python**-eksempler med `numpy`, `scipy.stats` og `matplotlib`.
 
-**Notebook-version:** [Tutorial_8_notebook.ipynb](Tutorial_8_notebook.ipynb)
 
 **Konfidensintervaller** (én middelværdi, forskel mellem middelværdier, andele): se **Tutorial 7** — særligt afsnit **3.2** ($t$-CI), **6** ($\mu_1-\mu_2$ pooled) og **7** (andel med Wald). Her supplerer vi med det, I typisk skal bruge **sammen med hypotesetest** i session 8’s øvelser.
 
@@ -19,6 +20,7 @@ Biblioteker:
 - `numpy`, `pandas` (fx `read_excel`, `Series.plot.kde`)
 - `scipy.stats` — tests, `probplot`, `skew`, `kurtosis`, `levene`
 - `matplotlib.pyplot`
+
 
 ```python
 import numpy as np
@@ -42,9 +44,11 @@ plt.rcParams["figure.figsize"] = (10, 6)
 plt.style.use("ggplot")
 ```
 
+
 ---
 
 ## 2. QQ-plot (normalitetscheck, som i øvelse 1–2 og 8)
+
 
 ```python
 x = np.array([18.0, 30.7, 19.8, 27.1, 22.3, 18.8, 31.8, 23.4, 21.2, 27.9])
@@ -55,6 +59,7 @@ plt.tight_layout()
 plt.show()
 ```
 
+
 For **parrede** data (øvelse 6) tjekkes ofte **normalitet af differenser** $d_i = x_i - y_i$ — samme kode med `d` i stedet for `x`.
 
 ---
@@ -62,6 +67,7 @@ For **parrede** data (øvelse 6) tjekkes ofte **normalitet af differenser** $d_i
 ## 3. Grundbegreber (Ross 8.1)
 
 - **$H_0$ / $H_1$**, ensidet/tosidet, **p-værdi**, $\alpha$, type I- og type II-fejl.
+
 
 ```python
 alpha = 0.05
@@ -71,9 +77,11 @@ p_two = 2 * (1 - norm.cdf(abs(z_obs)))
 print(f"Tosidet z: forkast |z| > {z_crit:.3f}; p = {p_two:.4f}")
 ```
 
+
 ---
 
 ## 4. $z$-test for $\mu$, $\sigma$ kendt (Ross 8.2)
+
 
 ```python
 x = np.array([98.5, 101.2, 99.8, 100.4, 99.1])
@@ -85,6 +93,7 @@ z_obs = (xbar - mu0) / se
 print(f"z_obs={z_obs:.4f}, p(tosidet)={2 * (1 - norm.cdf(abs(z_obs))):.4f}")
 ```
 
+
 ---
 
 ## 5. $t$-test, én stikprøve (Ross 8.3) — tosidet og ensidet
@@ -92,6 +101,7 @@ print(f"z_obs={z_obs:.4f}, p(tosidet)={2 * (1 - norm.cdf(abs(z_obs))):.4f}")
 $$T = \frac{\bar{X}-\mu_0}{S/\sqrt{n}} \sim t_{n-1} \quad \text{(under } H_0 \text{ og normalitet).}$$
 
 **Øvelse 1** (regn med, at middelværdi ** overstiger** 25): ensidet alternativ `"greater"`. **Øvelse 2**: tosidet.
+
 
 ```python
 # Eksempel som øvelse 1 (regnemedregn: tilpas dine tal)
@@ -117,6 +127,7 @@ t_stat2, p_two = ttest_1samp(body, 98.6, alternative="two-sided")
 print(f"Tosidet: t={t_stat2:.4f}, p={p_two:.4f}")
 ```
 
+
 **Ensidet konfidensgrænse for $\mu$** ($t$, ukendt $\sigma$): som i Tutorial 7.3.2 — $\bar{x} - t_{\alpha,\,n-1}\,s/\sqrt{n} \leq \mu$ for **nedre** grænse med konfidens $1-\alpha$.
 
 ---
@@ -127,6 +138,7 @@ $$S_p^2 = \frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}, \quad
 T = \frac{\bar{X}_1-\bar{X}_2}{S_p\sqrt{1/n_1+1/n_2}} \sim t_{n_1+n_2-2} \text{ under } H_0.$$
 
 **Valgfrit før pooled $t$:** test af ens varianser med **Levene** (eller $F$-forhold $s_1^2/s_2^2$) — som i nogle eksamensløsninger.
+
 
 ```python
 a = np.array([5.1, 6.2, 4.8, 5.5, 5.9])
@@ -140,7 +152,9 @@ t_stat_w, p_w = ttest_ind(a, b, equal_var=False)
 print(f"Welch: t={t_stat_w:.4f}, p={p_w:.4f}")
 ```
 
+
 **95 %-CI for $\mu_1 - \mu_2$ (pooled)** — samme formel som Tutorial 7.6:
+
 
 ```python
 def ci_diff_means_pooled(x1, x2, confidence=0.95):
@@ -156,8 +170,10 @@ def ci_diff_means_pooled(x1, x2, confidence=0.95):
     diff = m1 - m2
     return diff - tcrit * se, diff + tcrit * se
 
-print("95% CI mu1-mu2:", ci_diff_means_pooled(a, b))
+ci_lower, ci_upper = ci_diff_means_pooled(a, b)
+print(f"95% CI mu1-mu2: [{ci_lower:.4f}, {ci_upper:.4f}]")
 ```
+
 
 ---
 
@@ -166,6 +182,7 @@ print("95% CI mu1-mu2:", ci_diff_means_pooled(a, b))
 **Øvelse 5** (samme patient, to maskiner) er **parret** design: brug **differenser** og `ttest_rel` — ikke `ttest_ind` på de to kolonner som uafhængige stikprøver.
 
 **Øvelse 6** (før/efter): samme idé.
+
 
 ```python
 machine_a = np.array([119, 130, 141, 123, 149, 156, 134, 108, 123, 138, 119, 156])
@@ -183,6 +200,7 @@ tcrit = t.ppf(1 - alpha / 2, n - 1)
 print(f"95% CI for E[D]: [{dbar - tcrit * se:.4f}, {dbar + tcrit * se:.4f}]")
 ```
 
+
 ---
 
 ## 8. Test for én andel — stor stikprøve (Ross 8.6)
@@ -190,6 +208,7 @@ print(f"95% CI for E[D]: [{dbar - tcrit * se:.4f}, {dbar + tcrit * se:.4f}]")
 $$Z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}.$$
 
 **Øvelse 3:** ensidet $H_1: p > p_0$. **Øvelse 4:** tosidet.
+
 
 ```python
 # Øvelse 3: x=289, n=350, p0=0.78, ensidet større
@@ -209,15 +228,17 @@ print(f"Øvelse 4: z={z4:.4f}, p(tosidet)≈{p_tosidet:.4e}")
 print(f"binomtest: p={binomtest(x4, n4, p=p0, alternative='two-sided').pvalue:.4e}")
 ```
 
+
 **Ensidet nedre CI for $p$** med $\hat{p}$ i standardfejl (som i øvelse 3, svar): $\hat{p} - z_\alpha\sqrt{\hat{p}(1-\hat{p})/n}$ — se **Tutorial 7.7** (`side="lower"`). **Tosidet Wald-CI** med $\hat{p}$ i SE: Tutorial 7.7 `side="two"`.
 
 ---
 
-## 10. Test for to andele (Ross 8.6, øvelse 7)
+## 9. Test for to andele (Ross 8.6, øvelse 7)
 
 Under $H_0: p_1=p_2$: $\hat{p} = (x_1+x_2)/(n_1+n_2)$,
 
 $$Z = \frac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})(1/n_1+1/n_2)}}.$$
+
 
 ```python
 x1, n1 = 92, 98
@@ -229,18 +250,22 @@ z_obs = (p1h - p2h) / se
 print(f"Ensidet p1 > p2: z={z_obs:.4f}, p={norm.sf(z_obs):.4f}")
 ```
 
+
 ---
 
 ## 10. Dataarbejde, outliers, KDE og CI-figurer (øvelse 8)
 
 **Læs Excel** (filen skal ligge i jeres arbejdsmappe eller angiv fuld sti):
 
+
 ```python
 # df = pd.read_excel("Batteries.xlsx")
 # df1, df2 = df["Producer 1"], df["Producer 2"]
 ```
 
+
 **Outliers med 1,5×IQR** (erstat med gruppens middelværdi uden outliers, som i opgaven):
+
 
 ```python
 def replace_outliers_iqr_mean(series):
@@ -259,7 +284,9 @@ clean1 = replace_outliers_iqr_mean(fake1)
 print("n=", len(clean1), "mean=", clean1.mean())
 ```
 
+
 **Kvartiler, middelværdi, spredning:**
+
 
 ```python
 s = clean1
@@ -267,13 +294,17 @@ print("q1,q2,q3:", s.quantile([0.25, 0.5, 0.75]).tolist())
 print("mean, std, var:", s.mean(), s.std(ddof=1), s.var(ddof=1))
 ```
 
+
 **Skævhed og kurtosis** (som i opgavefilerne, ofte med `bias=False` for “population”-stil — følg jeres lærebog):
+
 
 ```python
 print("skew, kurtosis:", skew(s, bias=False), kurtosis(s, bias=False))
 ```
 
+
 **KDE-plot:**
+
 
 ```python
 fig, ax = plt.subplots()
@@ -282,7 +313,9 @@ ax.set_title("KDE")
 plt.show()
 ```
 
+
 **95 %-CI for én middelværdi** med `t.interval`:
+
 
 ```python
 def t_ci_mean(x, confidence=0.95):
@@ -295,7 +328,9 @@ def t_ci_mean(x, confidence=0.95):
 # print(t_ci_mean(df1))
 ```
 
+
 **Figur med $t$-tæthed** (illustration af CI — som i nogle svar; skaler `scale=SE`, `loc=mean`):
+
 
 ```python
 def plot_t_ci_on_mean_axis(data, confidence=0.95):
@@ -321,17 +356,62 @@ def plot_t_ci_on_mean_axis(data, confidence=0.95):
 # plot_t_ci_on_mean_axis(clean1)
 ```
 
+
 **Hypotesetest for to uafhængige middelværdier** på de to producentkolonner: `ttest_ind(..., equal_var=True)` som i øvelsens del (6).
 
 ---
 
-## 11. Afsluttende bemærkning
+## 11. Oversigt: hypoteser, tests og Python (SciPy)
 
-- **Øvelse 1–2:** $t$-test (ensidet/tosidet), QQ-plot, **konfidensinterval** for $\mu$ (se Tutorial 7.3.2).
-- **Øvelse 3–4:** $z$ for én andel; **CI for $p$** (Tutorial 7.7).
-- **Øvelse 5:** **parret** test + evt. deskriptiv statistik (`np.mean`, `np.std`, `np.percentile` for IQR).
-- **Øvelse 6:** parret test, QQ på **differenser**, skew/kurtosis, KDE.
-- **Øvelse 7:** **to andele** (afsnit 9).
-- **Øvelse 8:** Excel, IQR-outliers, deskriptiv statistik, CI for hver middelværdi og for **forskel** (afsnit 6 + 10), `ttest_ind`.
+Samlet reference til de cases, I har set i tutorialen. I `scipy.stats` fortolkes **`alternative`** ud fra **første stikprøve** i `ttest_ind(a, b, …)` (hypotese om $\mu_a$ vs. $\mu_b$) og ud fra **første minus anden** i `ttest_rel(x, y, …)` (hypotese om middel af $x-y$).
 
-**Relation test ↔ CI:** Tosidet test på niveau $\alpha$ svarer ofte til, at den hypotetiske værdi ligger uden for et $100(1-\alpha)\,\%$-konfidensinterval for den tilsvarende parameter.
+### Én middelværdi ($t$- eller $z$-test)
+
+| Situation | Typisk $H_0$ | Python / beregning |
+|-----------|--------------|---------------------|
+| $\sigma$ **kendt** (normalmodel) | $\mu = \mu_0$ | Manuel: $z_{\mathrm{obs}} = (\bar x - \mu_0)/(\sigma/\sqrt n)$; $p$ med `norm.cdf` / `norm.sf` (tosidet som i afsnit 2). |
+| $\sigma$ **ukendt**, **tosidet** | $\mu = \mu_0$ | `ttest_1samp(x, mu0, alternative="two-sided")` |
+| $\sigma$ ukendt, **$\mu > \mu_0$** | $\mu = \mu_0$ (eller $\mu \le \mu_0$) | `ttest_1samp(x, mu0, alternative="greater")` |
+| $\sigma$ ukendt, **$\mu < \mu_0$** | $\mu = \mu_0$ (eller $\mu \ge \mu_0$) | `ttest_1samp(x, mu0, alternative="less")` |
+
+**Parret** design: brug `ttest_rel(x, y, alternative="two-sided" | "greater" | "less")` eller ækvivalent `ttest_1samp(x - y, 0, alternative=…)` (differenser $x_i - y_i$).
+
+### To uafhængige middelværdier ($t$-test)
+
+| Situation | Typisk $H_0$ | Python / beregning |
+|-----------|--------------|---------------------|
+| **Pooled** (lige varianser — vejledende tjek: `levene(a, b)`), **tosidet** | $\mu_a = \mu_b$ | `ttest_ind(a, b, equal_var=True, alternative="two-sided")` |
+| Pooled, **$\mu_a > \mu_b$** | $\mu_a = \mu_b$ | `ttest_ind(a, b, equal_var=True, alternative="greater")` |
+| Pooled, **$\mu_a < \mu_b$** | $\mu_a = \mu_b$ | `ttest_ind(a, b, equal_var=True, alternative="less")` |
+| **Welch** (ulige varianser tilladt), samme hypotesetyper | $\mu_a = \mu_b$ | `ttest_ind(a, b, equal_var=False, alternative="two-sided" \| "greater" \| "less")` |
+
+Byt rækkefølgen af `a` og `b`, hvis I vil formulere alternativet med den anden gruppe som “første”.
+
+**95 %-CI for $\mu_1 - \mu_2$** (pooled, som i afsnit 6): `ci_diff_means_pooled(x1, x2)`.
+
+### Andele
+
+| Situation | Typisk $H_0$ | Python / beregning |
+|-----------|--------------|---------------------|
+| **Én andel**, eksakt (binomialmodel) | $p = p_0$ | `binomtest(k, n, p=p0, alternative="two-sided" \| "greater" \| "less")` ($k$ succeser ud af $n$) |
+| **Én andel**, normalapproksimation | $p = p_0$ | Manuel $z$; $p$ med `norm` (afsnit 8) |
+| **To andele** (stor stikprøve, pooled $z$) | $p_1 = p_2$ | **Manuel** $z$ og $p$ med `norm` (afsnit 9) — ikke en enkelt kernefunktion i SciPy til den klassiske test |
+
+### Forudsætninger (hjælp, ikke “automatisk sandhed”)
+
+| Formål | Funktion |
+|--------|----------|
+| Afvigelser fra lige varianser (robust) | `levene(gruppe1, gruppe2)` |
+| Normalitet (grafisk) | `probplot` (QQ) — afsnit 3 og 6 |
+
+### Konfidensintervaller (supplerende)
+
+| Parameter | Python / idé |
+|-----------|----------------|
+| $\mu$ én stikprøve | `t.interval(confidence, n - 1, loc=mean, scale=SE)` (afsnit 10) |
+| $\mu_1 - \mu_2$ pooled | `ci_diff_means_pooled(x1, x2)` |
+| Én andel $p$ | Se Tutorial 7.7 (fx Wilson); til hypotesetest bruges `binomtest` i denne tutorial |
+
+**Relation test ↔ CI:** En **tosidet** test på niveau $\alpha$ svarer ofte til, at den hypotetiske værdi ligger **uden for** et $100(1-\alpha)\,\%$-konfidensinterval for den tilsvarende parameter.
+
+Øvelsesopgaverne i session 8 bruger kombinationerne ovenfor; detaljer står i de enkelte afsnit og i øvelsesfilerne.

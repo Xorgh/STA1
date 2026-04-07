@@ -328,17 +328,25 @@ Two different machines, $A$ and $B$, which are used to measure blood pressure, a
 
     2. 
 
-        $H_0$ : Mean machine A is equal to mean of machine B
+        Same patient measured on both machines → **paired** design. Test mean difference $D = A - B$:
 
-        $H_1$ : Mean machine A is not equal to mean of machine B
+        - $H_0$: $\mathbb{E}[D] = 0$
+        - $H_1$: $\mathbb{E}[D] \neq 0$
 
-        <img src="src/ex7.jpg" width="80%">
+        ```python
+        import numpy as np
+        from scipy.stats import ttest_rel
 
-        We use a t-test since the samples are small. Also, the F-test shows that we are unable to reject 
-        different variances and thus assume equal variance. We obtain a p-value $= 0,0117$. From this we 
-        reject the null hypothesis and conclude that the machines are significantly different.
+        machine_a = np.array([119, 130, 141, 123, 149, 156, 134, 108, 123, 138, 119, 156])
+        machine_b = np.array([112, 126, 145, 112, 138, 156, 130, 112, 112, 119, 112, 152])
 
-    3. The p-value indicates the probability of obtaining the samples given that the null hypothesis is true, i.e. under the assumption that the two machines yield similar measurements, the probability of obtaining the results from assignment a) is $0,0117$.
+        t_stat, p_two = ttest_rel(machine_a, machine_b, alternative="two-sided")
+        print(f"Paired t (H0: mean difference = 0): t = {t_stat:.4f}, p = {p_two:.4f}")
+        ```
+
+        Use a **paired** $t$-test (`ttest_rel`), not `ttest_ind` on the two columns as independent samples (Tutorial 8, §7). The output gives $p \approx 0.0117$; reject $H_0$ at $\alpha = 0.05$ and conclude that the machines differ on average.
+
+    3. The p-value is the probability, **under $H_0$** (no systematic difference between machines), of observing a paired $t$-statistic at least as extreme as the one from these data — **not** the probability that $H_0$ is true. Here $p \approx 0.0117$.
 
 #### Øvelse 6 (Tidligere eksamensopgave)
 
@@ -416,24 +424,25 @@ An industrial safety program was recently instituted in the computer chip indust
 
         <img src="src/ex8_3.png" width="80%">
 
-            val = stats.ttest_rel(df['Before'], df['After'])
+        **Hypothesis test (paired $t$, aligned with Tutorial 8):**
 
-            alpha = 0.05
-            stat = abs(round(val[0],2))
-            pvalue = round(val[1], 4)/2
-            crit = abs(round(stats.t.ppf(alpha,n1-1),2))
-            stat
+        ```python
+        from scipy.stats import ttest_rel
 
-        2.27
+        t_stat, p_two = ttest_rel(df["Before"], df["After"], alternative="two-sided")
+        alpha = 0.05
+        print(f"t = {t_stat:.4f}, p (two-sided) = {p_two:.4f}")
+        if p_two < alpha:
+            print(f"Reject H0 since p = {p_two:.4f} < {alpha}")
+        else:
+            print(f"Fail to reject H0 since p = {p_two:.4f} >= {alpha}")
+        ```
 
-        if pvalue < alpha:
-                print("Reject since " + repr(pvalue) + ' < ' + repr(alpha))
-            else:
-                print("Fail to reject since " + repr(pvalue) + ' > ' + repr(alpha))
+        Example output: $t \approx 2.27$, $p \approx 0.0497$ — reject $H_0$ at $\alpha = 0.05$ (evidence of a change in mean labor-hours).
 
-        a) Reject since 0.02485 < 0.05
+    2. $95\%$ CI for the mean paired difference: use the differences $d_i = \text{Before}_i - \text{After}_i$, $SE = s_d/\sqrt{n}$, and $t_{0.025,\,n-1}$ (Tutorial 8, §7). If $0$ lies outside the interval, that matches rejecting $H_0$ in (1) at $\alpha = 0.05$.
 
-    2. same p-value different alpha, so no.
+    3. At $\alpha = 0.01$, the same two-sided $p \approx 0.0497$ is greater than $0.01$, so **fail to reject** $H_0$: insufficient evidence of an effect at the $1\%$ level.
 
 #### Øvelse 7 (Tidligere eksamensopgave)
 
@@ -443,75 +452,36 @@ A recent study among 254 computer science graduates from Aarhus University was m
 2. Explain the meaning of the p-value obtained in question (a), i.e. what does this probability refer to?
 
 ??? answer "&nbsp;"
-    
-        alg = 98
-        algs = 92
-        nonalgs = 136
-        nonalg = 254-alg
+    1. Two proportions, $H_0: p_1 = p_2$ vs $H_1: p_1 > p_2$ — **pooled $z$** as in Tutorial 8, §9.
 
-    1. Since we have two proportions, we can use test of difference between proportions:
+        ```python
+        import numpy as np
+        from scipy.stats import norm
 
-            val = sm.stats.proportions_ztest([algs, nonalgs], [alg, nonalg], value = None, alternative = 'larger')
-            stat = abs(round(val[0],2))
-            pvalue = round(val[1],4)
+        alg = 98  # n with linear algebra
+        algs = 92  # successful among those
+        nonalgs = 136  # successful without LA
+        nonalg = 254 - alg  # n without LA
 
-            alpha = 0.05
-            crit = stats.norm.isf(alpha/2)
+        x1, n1 = algs, alg
+        x2, n2 = nonalgs, nonalg
+        p1h, p2h = x1 / n1, x2 / n2
+        ph = (x1 + x2) / (n1 + n2)
+        se = np.sqrt(ph * (1 - ph) * (1 / n1 + 1 / n2))
+        z_obs = (p1h - p2h) / se
+        p_one = norm.sf(z_obs)
+        alpha = 0.05
+        print(f"z = {z_obs:.4f}, p (one-sided p1 > p2) = {p_one:.4f}")
+        if p_one < alpha:
+            print(f"Reject H0 since p = {p_one:.4f} < {alpha}")
+        else:
+            print(f"Fail to reject H0 since p >= {alpha}")
+        ```
 
-            if pvalue < alpha:
-                print("Reject since " + repr(pvalue) + ' < ' + repr(alpha))
-            else:
-                print("Fail to reject since " + repr(pvalue) + ' > ' + repr(alpha))
+        Example output: $z \approx 1.71$, $p \approx 0.0432$ — reject $H_0$ at $\alpha = 0.05$.
 
-        Reject since 0.0432 < 0.05
+    2. The p-value is the probability, **if $H_0$ were true** ($p_1 = p_2$), of observing a pooled $z$-statistic **at least as large** as $1.71$ (direction $p_1 > p_2$). It is **not** $P(H_0 \text{ true} \mid \text{data})$.
 
-            import numpy as np
-            from scipy.stats import norm
-            from IPython.display import display, Markdown
-
-            # Calculate the pooled proportion
-            pooled_p = (algs + nonalgs) / (alg + nonalg)
-
-            # Calculate the standard error
-            std_error = np.sqrt(pooled_p * (1 - pooled_p) * (1/alg + 1/nonalg))
-
-            # Calculate the z-score
-            z_score = (algs/alg - nonalgs/nonalg) / std_error
-
-            # Determine the p-value for the larger alternative
-            p_value = norm.sf(z_score)  # sf is survival function, which is 1-cdf
-
-            # Set significance level
-            alpha = 0.05
-
-            # Display the results
-            display(Markdown(f"### Z-Test Results for Two Proportions"))
-            display(Markdown(f"**Z-Score:** {z_score:.2f}"))
-            display(Markdown(f"**P-Value:** {p_value:.4f}"))
-            display(Markdown(f"**Significance Level (Alpha):** {alpha}"))
-
-            # Decision based on p-value
-            if p_value < alpha:
-                display(Markdown("**Conclusion:** Reject the null hypothesis since p-value < alpha."))
-            else:
-                display(Markdown("**Conclusion:** Fail to reject the null hypothesis since p-value > alpha."))
-
-        Z-Test Results for Two Proportions
-
-        Z-Score: 1.71
-
-        P-Value: 0.0432
-
-        Significance Level (Alpha): 0.05
-
-        Conclusion: Reject the null hypothesis since p-value < alpha.
-
-            val[0]
-
-        1.7143021919557946
-
-    2. see other answers elsewhere
-    
 #### Øvelse 8 (Tidligere eksamensopgave)
 
 Two producers of batteries measure the longevity of 30 batteries of the same type, which were randomly chosen from a larger batch of such batteries. The lifetime (in hundreds of hours) is displayed in [Batteries.xlsx](Batteries.xlsx).
@@ -795,63 +765,70 @@ Two producers of batteries measure the longevity of 30 batteries of the same typ
 
         <img src="src/ex10_7.png" width="80%">
 
-    6. 
+    6. Pooled two-sample $t$-test for $\mu_1 \neq \mu_2$ (Tutorial 8, §6). Code below matches the tutorial; run it after parts 1–2 so `df1` and `df2` exist. The plot is the same diagnostic figure as before.
 
-            import numpy as np
-            import scipy.stats as stats
-            import matplotlib.pyplot as plt
+        ```python
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy import stats
+        from scipy.stats import ttest_ind
 
-            # Generate some sample data for two independent samples (replace this with your own data)
-            data1 = df1
-            data2 = df2
+        data1 = df1
+        data2 = df2
 
-            # Calculate the mean and standard deviation of the data
-            mean1 = np.mean(data1)
-            mean2 = np.mean(data2)
-            std_dev1 = np.std(data1, ddof=1)  # ddof=1 gives an unbiased estimator of the population std dev
-            std_dev2 = np.std(data2, ddof=1)
+        mean1 = np.mean(data1)
+        mean2 = np.mean(data2)
+        std_dev1 = np.std(data1, ddof=1)
+        std_dev2 = np.std(data2, ddof=1)
 
-            # Set the significance level
-            alpha = 0.05  # 95% confidence level
+        alpha = 0.05
+        df_t = len(data1) + len(data2) - 2
 
-            # Perform a two-sample t-test with equal variances
-            t_stat, p_value = stats.ttest_ind(data1, data2, equal_var=True)
+        t_stat, p_two = ttest_ind(data1, data2, equal_var=True, alternative="two-sided")
+        p_value = p_two
+        print(f"Pooled t-test: t = {t_stat:.4f}, p (two-sided) = {p_two:.4f}")
 
-            # Calculate the critical t-value for the two-tailed t-test
-            t_crit = stats.t.ppf(1 - alpha/2, len(data1) + len(data2) - 2)
+        t_crit = stats.t.ppf(1 - alpha / 2, df_t)
+        if p_value < alpha:
+            print(f"Reject H0 since p = {p_value:.4f} < {alpha}")
+        else:
+            print(f"Fail to reject H0 since p = {p_value:.4f} >= {alpha}")
 
-            # Print the results of the hypothesis test
-            if p_value < alpha:
-                print("Reject since ", round(p_value, 4), ' < ', alpha)
-            else:
-                print("Fail to reject since ", round(p_value, 4) , '\u2265' , alpha)
-
-            # Plot the t-distribution with the rejection region shaded
-            x = np.linspace(-4, 4, 1000)
-            y = stats.t.pdf(x, len(data1) + len(data2) - 2)
-            plt.plot(x, y, 'k', linewidth=2)
-            shade1 = np.linspace(-t_crit, t_crit, 300)
-            shade2 = np.linspace(t_crit, 4, 300)
-            plt.fill_between(shade1, stats.t.pdf(shade1, len(data1) + len(data2) - 2), alpha=0.5)
-            plt.fill_between(shade2, stats.t.pdf(shade2, len(data1) + len(data2) - 2), alpha=0.5)
-            plt.axvline(x=t_crit, linestyle='--', color='k')
-            plt.axvline(x=-t_crit, linestyle='--', color='k')
-
-            # Add an arrow pointing to the position on the x-axis where the p-value lies
-            if p_value < alpha/2:
-                plt.annotate("p = {:.4f}".format(p_value), xy=(t_stat, 0.1), xytext=(t_stat + 1, 0.3),
-                            arrowprops=dict(facecolor='green', shrink=0.05))
-            elif p_value > 1 - alpha/2:
-                plt.annotate("p = {:.4f}".format(p_value), xy=(t_stat, 0.1), xytext=(t_stat - 1, 0.3),
-                            arrowprops=dict(facecolor='green', shrink=0.05))
-            else:
-                plt.annotate("p = {:.4f}".format(p_value), xy=(t_stat, 0.1), xytext=(t_stat, 0.3),
-                            arrowprops=dict(facecolor='green', shrink=0.05))
-
-            plt.title("t-Distribution with Hypothesis Test Results")
-            plt.xlabel("t-value")
-            plt.ylabel("Probability density")
-            plt.show()
+        x = np.linspace(-4, 4, 1000)
+        y = stats.t.pdf(x, df_t)
+        plt.plot(x, y, "k", linewidth=2)
+        shade1 = np.linspace(-t_crit, t_crit, 300)
+        shade2 = np.linspace(t_crit, 4, 300)
+        plt.fill_between(shade1, stats.t.pdf(shade1, df_t), alpha=0.5)
+        plt.fill_between(shade2, stats.t.pdf(shade2, df_t), alpha=0.5)
+        plt.axvline(x=t_crit, linestyle="--", color="k")
+        plt.axvline(x=-t_crit, linestyle="--", color="k")
+        if p_value < alpha / 2:
+            plt.annotate(
+                "p = {:.4f}".format(p_value),
+                xy=(t_stat, 0.1),
+                xytext=(t_stat + 1, 0.3),
+                arrowprops=dict(facecolor="green", shrink=0.05),
+            )
+        elif p_value > 1 - alpha / 2:
+            plt.annotate(
+                "p = {:.4f}".format(p_value),
+                xy=(t_stat, 0.1),
+                xytext=(t_stat - 1, 0.3),
+                arrowprops=dict(facecolor="green", shrink=0.05),
+            )
+        else:
+            plt.annotate(
+                "p = {:.4f}".format(p_value),
+                xy=(t_stat, 0.1),
+                xytext=(t_stat, 0.3),
+                arrowprops=dict(facecolor="green", shrink=0.05),
+            )
+        plt.title("t-Distribution with Hypothesis Test Results")
+        plt.xlabel("t-value")
+        plt.ylabel("Probability density")
+        plt.show()
+        ```
 
         Reject since  0.0177  <  0.05
 
