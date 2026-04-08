@@ -39,7 +39,7 @@ Ross: 8.1, 8.2, 8.3, 8.4 og 8.6. Afsnit 8.5 (test af varians med $\chi^2$) og 8.
 
 ## Video Materiale:
 
-Der er to playliste med hhv. 16 og 8 videoer. Videoerne gennemgår de grundlæggende begreber og metoder for hypotesetest; tests for **to stikprøver** og  **parret t-test**. Test for andelse gennemgås ikke i videoerne, men her henvises til tutorialen og sessionens øvelser.
+Der er to playlister med hhv. 16 og 8 videoer. Videoerne gennemgår de grundlæggende begreber og metoder for hypotesetest; tests for **to stikprøver** og  **parret t-test**. Test for andelse gennemgås ikke i videoerne, men her henvises til tutorialen og sessionens øvelser.
 
 **Hypotesetest**
 

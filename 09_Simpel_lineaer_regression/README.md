@@ -12,7 +12,7 @@ tags:
 
 ## Sessionsmateriale:
 
-Ross: **9.1**–**9.6** (introduktion, MK-estimation, fordeling af estimatore, inferens om $\beta_0$ og $\beta_1$, $R^2$ og $r$, residualanalyse).
+Ross: 9.1–9.6
 
 <p align="left">
 
@@ -25,7 +25,7 @@ Ross: **9.1**–**9.6** (introduktion, MK-estimation, fordeling af estimatore, i
 
 <a href="Tutorial_9_notebook.ipynb" download>Download tutorial som notebook (.ipynb)</a>
 
-[Se tutorial som markdown](Tutorial_9.md/) (genereret fra notebook — **ret i `.ipynb`**, kør derefter `python sync_tutorial9_md.py` så siden opdateres).
+[Se tutorial som markdown](Tutorial_9.md/)
 
 **Formler og metrics (engelsk, detaljeret):** [Calculating_metrics.md](Calculating_metrics.md)
 
@@ -35,25 +35,33 @@ Ross: **9.1**–**9.6** (introduktion, MK-estimation, fordeling af estimatore, i
 
 [Sessionsmateriale]()
 
+## Video Materiale:
+
+Der er én playliste med 12 videoer. Videoerne gennemgår de grundlæggende begreber og metoder for regression.
+
+**Simple Linear Regression**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=oMz8DfBGWlDNUsv7&amp;list=PLvxOuBpazmsND0vmkP1ECjTloiVz-pXla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## Sessionbeskrivelse
 
-I denne session arbejder vi med **simpel lineær regression** (Ross kap. 9): et respons $Y$ modelleres som en lineær funktion af én forklarende variabel $x$. Vi estimerer $\beta_0$ og $\beta_1$ med **mindste kvadraters metode**, ser på fordelinger af estimatorer, **$t$-tests** og **konfidensintervaller** for koefficienterne, **$R^2$** og **Pearson $r$**, og vurderer modellen med **residual- og QQ-plots**.
+I denne session arbejder vi med simpel lineær regression (Ross kap. 9): et respons $Y$ modelleres som en lineær funktion af én forklarende variabel $x$. Vi estimerer $\beta_0$ og $\beta_1$ med mindste kvadraters metode, ser på fordelinger af estimatorer, $t$-tests og konfidensintervaller for koefficienterne, $R^2$ og Pearson $r$, og vurderer modellen med residual- og QQ-plots.
 
-**Øvelserne** er alene opgaver i **simpel lineær regression** (MK-estimation, modeltilpasning, inferens, $r$/$R^2$, residualer og forudsigelse) hentet fra tidligere eksamen.
+Øvelserne er alene opgaver i simpel lineær regression (MK-estimation, modeltilpasning, inferens, $r$/$R^2$, residualer og forudsigelse) hentet fra tidligere eksamen.
 
-* Python-gennemgang: **Tutorial 9** (**statsmodels** og **scikit-learn**: `pip install …` eller celle 0 i notebook med `%pip`, hvis import fejler)
+* Python-gennemgang: Tutorial 9 (statsmodels og scikit-learn: `pip install …` eller celle 0 i notebook med `%pip`, hvis import fejler)
 * Formler og metrics: [Calculating_metrics.md](Calculating_metrics.md).
 
 ### Centrale begreber
 
-- **Den simple lineære model** $Y = \beta_0 + \beta_1 x + \varepsilon$ og MK-estimaterne $\hat{\beta}_0$, $\hat{\beta}_1$
-- **Fittede værdier og residualer**; **SSE**, **MSE** og skøn over $\sigma^2$
-- **Standardfejl** og **$t$-fordeling** med $n-2$ frihedsgrader til inferens om $\beta_1$ og $\beta_0$
-- **Konfidensintervaller** og tests for $H_0$: $\beta_1 = 0$
-- **$R^2$** og **Pearson $r$** — fortolkning og sammenhæng i simpel regression
-- **Residualanalyse** (linearitet, varians, normalitet)
+- Den simple lineære model $Y = \beta_0 + \beta_1 x + \varepsilon$ og MK-estimaterne $\hat{\beta}_0$, $\hat{\beta}_1$
+- Fittede værdier og residualer; SSE, MSE og skøn over $\sigma^2$
+- Standardfejl og $t$-fordeling med $n-2$ frihedsgrader til inferens om $\beta_1$ og $\beta_0$
+- Konfidensintervaller og tests for $H_0$: $\beta_1 = 0$
+- $R^2$ og Pearson $r$ — fortolkning og sammenhæng i simpel regression
+- Residualanalyse (linearitet, varians, normalitet)
 
 !!! tip "Læringsmål"
 

@@ -32,6 +32,14 @@ Ross: 10.1-10.3
 
 [Sessionsmateriale]()
 
+## Video Materiale:
+
+Der er én playliste med 5 videoer. Videoerne gennemgår de grundlæggende begreber og metoder for variansanalyse.
+
+**One-way ANOVA**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=1BoXz_UIw58GL12F&amp;list=PLvxOuBpazmsNqPdvhkF_l55tHdDNW3z-7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## Sessionbeskrivelse
@@ -45,24 +53,24 @@ Vi gennemgår modellen med fælles fejlvarians, opdeling af den totale variation
 * **Øvelse 1:** three resin types, impurity concentration — [Resin_impurities.xlsx](Resin_impurities.xlsx).
 * **Øvelse 2:** three oscilloscope filters (radar operator) — [Scope_filter_intensity.xlsx](Scope_filter_intensity.xlsx).
 * **Øvelse 3:** two weight-loss diets (lb) — [Diet_weight_loss.xlsx](Diet_weight_loss.xlsx); ANOVA with $k=2$ plus an alternative test.
-* **Øvelse 4:** complete a partially given **one-way ANOVA** table (four factor levels); replicates, missing SS/MS/DF, $P$-value bounds, conclusion.
+* **Øvelse 4:** complete a partially given one-way ANOVA table (four factor levels); replicates, missing SS/MS/DF, $P$-value bounds, conclusion.
 
 ### Centrale begreber
 
 - **Ensidet layout:** én kategorisk faktor med $k$ niveauer (grupper)
 - **Model:** $Y_{ij} = \mu_i + \varepsilon_{ij}$ (Ross’ notation) / effektform med $\mu + \alpha_i$
 - **$H_0$: $\mu_1 = \cdots = \mu_k$** mod **$H_1$:** ikke alle $\mu_i$ ens
-- **SST**, **SSW** (indenfor), **SSB** (mellem), **df**, **MSB**, **MSW**, **$F$-teststørrelse**
-- **Antagelser:** uafhængige observationer, ca. normalitet inden for hver gruppe, **ens varians** ($\sigma^2$) på tværs af grupper
-- **Efter ANOVA:** justerede **parvise sammenligninger** (fx Tukey) for at undgå “datadyrkning”
+- SST, SSW (indenfor), SSB (mellem), df, MSB, MSW, $F$-teststørrelse
+- **Antagelser:** uafhængige observationer, ca. normalitet inden for hver gruppe, ens varians ($\sigma^2$) på tværs af grupper
+- **Efter ANOVA:** justerede parvise sammenligninger (fx Tukey) for at undgå “datadyrkning”
 
 !!! tip "Læringsmål"
 
     - Kunne forklare hvorfor ANOVA bruges ved $k>2$ grupper i stedet for mange $t$-tests.
     - Kunne opstille $H_0$ og $H_1$ for en ensidig ANOVA og fortolke en $F$-teststørrelse og tilhørende $p$-værdi.
     - Kunne skitsere opbygningen af ANOVA-tabellen (sumkvadrater, frihedsgrader, middelkvadrater).
-    - Kunne gennemføre one-way ANOVA i Python med **SciPy** (`f_oneway`) og **statsmodels** (`ols` + `anova_lm`).
-    - Kunne efter en signifikant ANOVA bruge **Tukey HSD** (eller tilsvarende) til parvise sammenligninger og fortolke output.
+    - Kunne gennemføre one-way ANOVA i Python med SciPy (`f_oneway`) og statsmodels (`ols` + `anova_lm`).
+    - Kunne efter en signifikant ANOVA bruge Tukey HSD (eller tilsvarende) til parvise sammenligninger og fortolke output.
 
 ## Øvelser
 
