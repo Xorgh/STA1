@@ -33,7 +33,9 @@ Ross: 8.1, 8.2, 8.3, 8.4 og 8.6. Afsnit 8.5 (test af varians med $\chi^2$) og 8.
 
 [Se tutorial som markdown](Tutorial_8.md/)
 
-[Sessionnoter]()
+[Recap og øvelser](https://drive.google.com/file/d/1HRY7fsQuBJbPVkPFIVq4iDoo1_Ze4tsR/view?usp=sharing)
+
+[Sessionnoter](https://drive.google.com/file/d/1Ji4laf6gU06-unx-QhclQupT4u9OePUA/view?usp=sharing)
 
 [Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgBpqz5s2aMPT6m9AnrKA1SRAdYPWJdWNYdLgbykYLSSubE?e=ed5PUw)
 
@@ -87,7 +89,6 @@ Opgaveliste session 8 (uden contingency table-øvelser)
     ol { list-style-type: lower-alpha; }
 </style>
 
-Gennemgang i Python med samme tal som i opgaverne finder du i **Tutorial 8** (markdown og notebook under Sessionsmateriale).
 
 #### Øvelse 1
 
