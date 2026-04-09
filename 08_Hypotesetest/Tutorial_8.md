@@ -21,6 +21,8 @@ Biblioteker:
 - `scipy.stats` — tests, `probplot`, `skew`, `kurtosis`, `levene`
 - `matplotlib.pyplot`
 
+**Navne på teststørrelser:** I tekst og kode bruges forskellige navne for den **fra data beregnede** værdi af teststørrelsen under $H_0$ — fx `z_obs`, `z_stat` og `z_test` for $z$-tests, og `t_stat`, `t_obs` og `t_test` for $t$-tests. Det **betyder det samme**: den observerede teststørrelse, som sammenlignes med en kritisk værdi eller bruges til $p$-værdi. Suffixet `_obs` understreger ofte "observeret fra stikprøve" (i modsætning til fx $z_{\alpha/2}$); `t_stat` bruges meget i kode fordi SciPy returnerer feltet `statistic`. I denne tutorial bruger vi bl.a. `z_obs` og `t_stat` — det er **samme idé**, kun **forskellig notation**.
+
 
 ```python
 import numpy as np
@@ -72,7 +74,7 @@ For **parrede** data (øvelse 6) tjekkes ofte **normalitet af differenser** $d_i
 ```python
 alpha = 0.05
 z_crit = norm.ppf(1 - alpha / 2)
-z_obs = 2.1
+z_obs = 2.1  # samme som z_stat / z_test: observeret z-værdi under H0
 p_two = 2 * (1 - norm.cdf(abs(z_obs)))
 print(f"Tosidet z: forkast |z| > {z_crit:.3f}; p = {p_two:.4f}")
 ```
@@ -89,7 +91,7 @@ mu0, sigma, alpha = 100.0, 2.0, 0.05
 n = len(x)
 xbar = np.mean(x)
 se = sigma / np.sqrt(n)
-z_obs = (xbar - mu0) / se
+z_obs = (xbar - mu0) / se  # også z_stat / z_test
 print(f"z_obs={z_obs:.4f}, p(tosidet)={2 * (1 - norm.cdf(abs(z_obs))):.4f}")
 ```
 
@@ -112,7 +114,7 @@ rain = np.array(
     ]
 )
 mu0, alpha = 25.0, 0.01
-t_stat, p_greater = ttest_1samp(rain, mu0, alternative="greater")
+t_stat, p_greater = ttest_1samp(rain, mu0, alternative="greater")  # t_stat = samme som t_obs / t_test
 print(f"Ensidet H1 mu > {mu0}: t={t_stat:.4f}, p={p_greater:.4f}")
 
 # Tosidet (som øvelse 2)
@@ -123,7 +125,7 @@ body = np.array(
         98.8, 98.8, 98.9, 98.9, 99.0,
     ]
 )
-t_stat2, p_two = ttest_1samp(body, 98.6, alternative="two-sided")
+t_stat2, p_two = ttest_1samp(body, 98.6, alternative="two-sided")  # samme som t_obs / t_test
 print(f"Tosidet: t={t_stat2:.4f}, p={p_two:.4f}")
 ```
 
