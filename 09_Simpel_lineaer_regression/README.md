@@ -29,11 +29,11 @@ Ross: 9.1–9.6
 
 **Formler og metrics (engelsk, detaljeret):** [Calculating_metrics.md](Calculating_metrics.md)
 
-[Recap og øvelser]()
+[Recap og øvelser](https://drive.google.com/file/d/1-Zxp15Il1jZZsaViy0WEuuPhiA5QMHFN/view?usp=sharing)
 
-[Sessionnoter]()
+[Sessionnoter](https://drive.google.com/file/d/155VOAnrutze7091LObcAhAcnau__uBl1/view?usp=sharing)
 
-[Sessionsmateriale]()
+[Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgAJ1I9P5aHfQKK20QzysnClAQK9vGBl7WcTUedgh6dHVCE?e=QecK4C)
 
 ## Video Materiale:
 
