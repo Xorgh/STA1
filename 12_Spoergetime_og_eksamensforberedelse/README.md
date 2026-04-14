@@ -1,44 +1,39 @@
 ---
 tags:
-    - Emner (indsættes)
+    - Spørgetime
+    - Repetition
+    - Eksamensforberedelse
 ---
 <h1 align="center">Spørgetime og eksamensforberedelse</h1>
 
 ## Sessionsmateriale:
 
-Pensum og materialer indsættes her.
+Sessionen er en målrettet spørgetime om den skriftlige eksamen: format, forventninger, strategi og typiske faldgruber.
 
-[Recap og øvelser]()
+[Oversigt over eksamensformat](../pages/exam.md)
 
 [Sessionnoter]()
-
-[Sessionsmateriale]()
 
 ---
 
 ## Sessionbeskrivelse
 
-Kort akademisk beskrivelse indsættes her.
+I denne afsluttende session er fokus på selve eksamenssituationen frem for nyt fagligt indhold. Vi gennemgår hvordan opgaver læses effektivt, hvordan svar struktureres tydeligt, hvad der typisk udløser pointtab, og hvordan I prioriterer tiden under eksamen. Spørgetimen bruges til afklaring af eksamenskrav, bedømmelseskriterier og besvarelsesstrategi.
 
 ### Centrale begreber
 
-- Begreb 1 (indsættes)
-- Begreb 2 (indsættes)
-- Begreb 3 (indsættes)
+- Eksamensformat: opgavetyper, pointvægt og forventet detaljeringsniveau
+- Besvarelsesstrategi: hvordan man disponerer tid og prioriterer delopgaver
+- Bedømmelseskriterier: hvad der kendetegner en stærk statistisk besvarelse
+- Typiske fejl: uklare konklusioner, manglende antagelser og svag fortolkning
 
 !!! tip "Læringsmål"
 
-    - Læringsmål indsættes.
-    - Læringsmål indsættes.
-    - Læringsmål indsættes.
+    - Kunne planlægge en realistisk strategi for hele eksamen under tidspres.
+    - Kunne formulere klare, korte og bedømmelsesrelevante svar.
+    - Kunne identificere og undgå de mest almindelige fejltyper i eksamenssvar.
+    - Kunne stille målrettede spørgsmål, der afklarer eksamenskrav og forventninger.
 
 ## Øvelser
 
-<!--
-Indsæt bogreferencer og opgavelister her.
--->
-<style type="text/css">
-    ol { list-style-type: lower-alpha; }
-</style>
-
-*Øvelser indsættes.*
+Fra tidligere eksamensopgaver i Wiseflow.

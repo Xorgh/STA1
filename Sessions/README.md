@@ -15,8 +15,8 @@ Klik på en session i menuen til venstre for at se plan og materiale for den enk
 | 07      | 26. Mar. 12.45-16.05 | [Intervalestimation og konfidensintervaller](/STA_26/07_Intervalestimation_og_konfidensintervaller/) |
 | 08      | 09. Apr. 12.45-16.05 | [Hypotesetest](/STA_26/08_Hypotesetest/) |
 | 09      | 13. Apr. 12.45-16.05 | [Simpel lineær regression](/STA_26/09_Simpel_lineaer_regression/) |
-| 10      | 16. Apr. 12.45-16.05 | [Variansanalyse (ANOVA)](/STA_26/10_Variansanalyse_ANOVA/) |
-| 11      | 23. Apr. 12.45-16.05 | [Goodness-of-fit og analyse af kategoriske data](/STA_26/11_Goodness_of_fit_og_analyse_af_kategoriske_data/) |
+| 10      | 16. Apr. 12.45-16.05 | [Goodness-of-fit og analyse af kategoriske data](/STA_26/11_Goodness_of_fit_og_analyse_af_kategoriske_data/) |
+| 11      | 23. Apr. 12.45-16.05 | [Repetition og eksamensopgaver](/STA_26/11_Repetition_og_eksamensopgaver/) |
 | 12      | 30. Apr. 12.45-16.05 | [Spørgetime og eksamensforberedelse](/STA_26/12_Spoergetime_og_eksamensforberedelse/) |
 
 </div>
