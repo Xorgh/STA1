@@ -167,7 +167,9 @@ nav:
     - "09 Simpel lineær regression":
       - 09_Simpel_lineaer_regression/README.md
       - "Tutorial 9 (notebook)": 09_Simpel_lineaer_regression/Tutorial_9_notebook.ipynb
-    - "10 Goodness-of-fit og analyse af kategoriske data": 11_Goodness_of_fit_og_analyse_af_kategoriske_data/README.md
+    - "10 Goodness-of-fit og analyse af kategoriske data":
+      - 10_Goodness_of_fit_og_analyse_af_kategoriske_data/README.md
+      - "Tutorial 10 (notebook)": 10_Goodness_of_fit_og_analyse_af_kategoriske_data/Tutorial_10_notebook.ipynb
     - "11 Repetition og eksamensopgaver": 11_Repetition_og_eksamensopgaver/README.md
     - "12 Spørgetime og eksamensforberedelse": 12_Spoergetime_og_eksamensforberedelse/README.md
   - Generelle ressourcer STA: https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgCRcFyOD9zaTZE0MIeH7KyCAcoyBaddmF791Zj-ghekZ04?e=ahV2dL

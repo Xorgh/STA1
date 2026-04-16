@@ -19,9 +19,20 @@ Ross: 11.1–11.4
 
 [Recap og øvelser]()
 
-[Sessionnoter]()
+<p align="left">
 
-[Sessionsmateriale]()
+  <a href="Tutorial_10_notebook/">
+    <img src="../figures/Python-logo-notext.svg.png" alt="Python tutorial" width="100" />
+    <br>
+    <strong>Se Tutorial 10: Goodness-of-fit og kategoriske data</strong>
+  </a>
+</p>
+
+<a href="Tutorial_10_notebook.ipynb" download>Download tutorial som notebook (.ipynb)</a>
+
+[Se tutorial som markdown](Tutorial_10.md/)
+
+[Sessionsmateriale](https://viaucdk-my.sharepoint.com/:f:/g/personal/rib_viauc_dk/IgCYtkGifsarR7EZ7jXQlSz5AY6Ci4pTawfCd4_q96mfH28?e=hBJXT6)
 
 ## Video Materiale:
 
@@ -69,14 +80,78 @@ Indsæt bogreferencer og opgavelister her.
     ol { list-style-type: lower-alpha; }
 </style>
 
-#### Øvelse 1 (Goodness-of-fit)
-*(to be inserted)*
+**Python løsninger til øvelse 1-6 kan findes i sessionsmaterialet.**
 
-#### Øvelse 2 (Goodness-of-fit)
-*(to be inserted)*
+#### Øvelse 1
+The past output of a machine indicates that each unit it produces will be
 
-#### Øvelse 3 (Goodness-of-fit)
-*(to be inserted)*
+\[
+\begin{array}{lcl}
+\text{top grade}    & \text{with probability} & 0.40 \\
+\text{high grade}   & \text{with probability} & 0.30 \\
+\text{medium grade} & \text{with probability} & 0.20 \\
+\text{low grade}    & \text{with probability} & 0.10 \\
+\end{array}
+\]
+
+A new machine, designed to perform the same job, has produced 500 units with the following results.
+
+\[
+\begin{array}{l r}
+\text{top grade} & 234 \\
+\text{high grade} & 117 \\
+\text{medium grade} & 81 \\
+\text{low grade} & 68 \\
+\end{array}
+\]
+
+Can the difference in output be ascribed solely to chance?
+
+??? answer "&nbsp;"
+    \(T=23.13 \quad p\)-value \(=.00004\).
+
+    We reject the null hypothesis and conclude that the difference in output cannot be ascribed solely to chance at both the 0.01 and 0.05 significance levels.
+
+#### Øvelse 2
+It is believed that the daily number of electrical power failures in a certain Midwestern city is a Poisson random variable with mean 4.2. Test this hypothesis if over 150 days the number of days having \(i\) power failures is as follows:
+
+| Failures | Number of Days |
+| :---: | :---: |
+| 0 | 0 |
+| 1 | 5 |
+| 2 | 22 |
+| 3 | 23 |
+| 4 | 32 |
+| 5 | 22 |
+| 6 | 19 |
+| 7 | 13 |
+| 8 | 6 |
+| 9 | 4 |
+| 10 | 4 |
+| 11 | 0 |
+
+To perform the test, group the data into the following four categories: 0–3, 4–5, 6–7, and 8 or more failures.
+
+??? answer "&nbsp;"
+    \(T=4.2488 \quad p\)-value \(=.2358\)
+
+    Fail to reject the null hypothesis and conclude that we have no reason to doubt that the daily number of electrical power failures is a Poisson random variable with mean 4.2.
+
+
+#### Øvelse 3
+
+1. A sample of size 120 had a sample mean of 100 and a sample standard deviation of 15. Of these 120 data values, 3 were less than 70; 18 were between 70 and 85; 30 were between 85 and 100; 35 were between 100 and 115; 32 were between 115 and 130; and 2 were greater than 130. Test the hypothesis that the sample distribution was normal. 
+*(Note: Use the 6 specified intervals as your bins and assume the mean and standard deviation are known constants for the purpose of the test.)*
+
+2. In øvelse 2, test the hypothesis that the daily number of failures has a Poisson distribution. 
+*(Note: Estimate the mean ($\lambda$) from the provided data. To perform the test, group the data into 9 categories: [0–1], [2], [3], [4], [5], [6], [7], [8], and [9 or more] failures.)*
+
+??? answer "&nbsp;"
+    1. \(TS=19.295 \quad p\)-value \(=.0017\)
+        With \(df=5\), we reject the null hypothesis and conclude that the sample distribution was not normal both at the 0.01 and 0.05 significance levels.
+
+    2. \(T=5.3683 \quad p\)-value \(=.6151\)
+        Using the estimated mean \(\hat{\lambda} \approx 4.5667\) and \(df=7\), we fail to reject the null hypothesis. There is no reason to doubt that the daily number of electrical power failures follows a Poisson distribution.
 
 #### Øvelse 4 (Tidligere eksamensopgave)
 
@@ -96,7 +171,18 @@ An IT company receives its printed circuit boards from two different suppliers, 
 
         We fail to reject and conclude that we do not have sufficient evidence to support the claim that rate of defectives and suppliers are not very significantly independent .We would, however, be able to conclude this with alpha $=0,05$
 
-#### Øvelse 5 (Tidligere eksamensopgave)
+#### Øvelse 5
+A 1992 article in the Journal of the American Medical Association ("A Critical Appraisal of 98.6 Degrees F, the Upper Limit of the Normal Body Temperature, and Other Legacies of Carl Reinhold August Wunderlich") reported body temperature, gender, and heart rate for a number of subjects. The body temperatures for 25 female subjects follow: $97.8,97.2$, $97.4,97.6,97.8,97.9,98.0,98.0,98.0,98.1,98.2,98.3,98.3$, $98.4,98.4,98.4,98.5,98.6,98.6,98.7,98.8,98.8,98.9,98.9$, and 99.0.
+
+
+Test the assumption that female body temperature is normally distributed.
+
+??? answer "&nbsp;"
+    p-value (Anderson-Darling): 0.7754
+
+    Result: Fail to reject H0. The body temperature data follows a normal distribution.
+
+#### Øvelse 6 (Tidligere eksamensopgave)
 
 Different screens and their hue bias were tested and the result is displayed in the following table:
 
@@ -117,7 +203,7 @@ Is there sufficient evidence to conclude that screens and hue bias depend signif
 
     We obtain a p-value $= 0.0000$. From this we reject the null hypothesis and conclude that screens and hue bias are dependent.
 
-#### Øvelse 6 (Tidligere eksamensopgave)
+#### Øvelse 7 (Tidligere eksamensopgave)
 
 The dataset for this assignment is [Wages_and_Work_Hour.xlsx](Wages_and_Work_Hour.xlsx). This workbook contains data on fulltime workers in East North Central United States from the March 1999 CPS. The objective is to determine whether Education, Income, and Gender differ.
 
@@ -196,7 +282,7 @@ Variable notes:
 
         Test Conclusion: Reject $H_0$ since p-value $=0.0000<0.05$
 
-#### Øvelse 7 (Tidligere eksamensopgave)
+#### Øvelse 8 (Tidligere eksamensopgave)
 
 The dataset for this assignment is the infamous Titanic data set (please see [Titanic.xlsx](Titanic.xlsx)). The objective is to determine whether the survival rates differ between selected variables.
 
